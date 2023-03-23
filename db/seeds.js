@@ -23,15 +23,17 @@ const seedDatabase = async () => {
 
     //Create default users
     const createdUsers = await User.create(userData)
-    console.log(`😎 ${createdUsers.length} have been added to the database.`)
+    //console.log(createdUsers)
+    console.log(`😎 ${createdUsers.length} users have been added to the database.`)
 
-    //Assign _id of users to each item
+    //Assign _id of users to each item as owner field randomly
     const createdItemsWithOwner = itemData.map(item => {
       const random = createdUsers[Math.floor(Math.random() * createdUsers.length)] 
       return { ...item, owner: random._id }
     })
 
     const createdItems = await Item.create(createdItemsWithOwner)
+    //console.log(createdItems)
     console.log(`💫 ${createdItems.length} items have been added to the database.`)
 
     await mongoose.connection.close()

@@ -11,7 +11,7 @@ const itemSchema = new mongoose.Schema({
   condition: { type: String, required: true, maxlength: 300 },
   swapValue: { type: Number, required: true, min: 0.1, max: 999999 },
   image: { type: String, required: true },
-  owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
+  //owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
 })
 
 
