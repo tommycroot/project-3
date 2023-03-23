@@ -5,7 +5,7 @@ import { getItems, createItem, deleteItem, updateItem, getSingleItem } from '../
 //import { addMessage, updateMessage, deleteMessage } from '../controllers/messages.js'
 import { registerUser, loginUser } from '../controllers/auth.js'
 import { secureRoute } from './secureRoute.js'
-//import { profileView, getSingleProfile } from '../controllers/users.js'
+import { profileView, getSingleProfile } from '../controllers/profiles.js'
 
 router.route('/items')
   .get(getItems)
@@ -35,13 +35,10 @@ router.route('/login')
 //   .put(secureRoute, updateMessage)
 //   .delete(secureRoute, deleteMessage)
 
-// router.route('/profile')
-//   .get(secureRoute, profileView)
+router.route('/profile')
+  .get(secureRoute, profileView)
 
-// router.route('/profile')
-//   .get(secureRoute, profileView)  
-
-// router.route('/profile/:profileId')
-//   .get(secureRoute, getSingleProfile)
+router.route('/profile/:profileId')
+  .get(secureRoute, getSingleProfile)
 
 export default router
