@@ -1,20 +1,20 @@
 import express from 'express'
 const router = express.Router()
-import { getItems, /* getSingleItem, createItem, updateItem,*/ deleteItem} from '../controllers/items.js'
-// import { addRating, deleteRating } from '../controllers/ratings.js'
-// import { addMessage, updateMessage, deleteMessage } from '../controllers/messages.js'
-// import { registerUser, loginUser } from '../controllers/auth.js'
-// import { secureRoute } from './secureRoute.js'
-// import { profileView, getSingleProfile } from '../controllers/users.js'
+import { getItems, createItem/*, getSingleItem, createItem, updateItem, deleteItem*/ } from '../controllers/items.js'
+//import { addRating, deleteRating } from '../controllers/ratings.js'
+//import { addMessage, updateMessage, deleteMessage } from '../controllers/messages.js'
+//import { registerUser, loginUser } from '../controllers/auth.js'
+//import { secureRoute } from './secureRoute.js'
+//import { profileView, getSingleProfile } from '../controllers/users.js'
 
-router.route('/items')
+router.route('/items') 
   .get(getItems)
-  // .post(secureRoute, createItem)
+  .post(createItem)
 
-router.route('/items/:id')
+// router.route('/items/:id')
 //   .get(getSingleItem)
 //   .put(secureRoute, updateItem)
-  .delete( deleteItem)
+//   .delete(secureRoute, deleteItem)
 
 // router.route('/register')
 //   .post(registerUser)

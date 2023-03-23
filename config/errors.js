@@ -19,6 +19,6 @@ export class NotFound extends Error{
 
 export const sendError = (err, res) => {
   console.log('MESSAGE ->', err)
-  if(err.status) return res.status(err.status).json({ message: err.message })
+  if (err.status) return res.status(err.status).json({ message: err.message })
   return res.status(422).json({ message: err.message })
 }

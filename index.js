@@ -1,5 +1,6 @@
 import express from 'express'
 import mongoose from 'mongoose'
+import router from './config/router.js'
 import 'dotenv/config'
 import router from './config/router.js'
 
