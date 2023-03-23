@@ -1,6 +1,14 @@
 import mongoose from 'mongoose'
 import bcrypt from 'bcrypt'
 
+//! Seller Rating schema 
+// Embedded Relationship , canadd a second argument checking if user has infact traded with seller 
+const sellerRatingsSchema = new mongoose.Schema({
+  rating: { type: Number, required: true, min: 1, max: 5 },
+  owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
+})
+
+
 //! User schema 
 const userSchema = new mongoose.Schema({
   username: { type: String, required: true, unique: true, maxlength: 25 },
@@ -8,14 +16,30 @@ const userSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   items: { type: mongoose.Schema.ObjectId, ref: 'Item', required: true },
+  ratings : [sellerRatingsSchema]
 })
 
-// userSchema.virtual('items', {
-//   ref: 'Item',
-//   localField: '_id',
-//   foreignField: 'owner',
-// })
 
+//Average rating 
+
+userSchema.virtual('averageRating')
+  .get(function() {
+    if (!this.ratings.length) return 'No ratings for the user'
+    
+    const sum = this.ratings.reduce((acc, rating) => {
+      return acc + rating.rating;
+    }, 0)
+    
+    return parseFloat((sum / this.ratings.length).toFixed(2))
+  })
+
+
+// validation below 
+userSchema.virtual('items', {
+  ref: 'Item',
+  localField: '_id',
+  foreignField: 'owner',
+})
 
 
 userSchema.set('toJSON', {
@@ -52,4 +76,5 @@ userSchema.methods.validatePassword = function (plainTextPassword) {
 
 
 export default mongoose.model('User', userSchema)
+
 
