@@ -1,5 +1,5 @@
 // * PUT route
-import { sendError } from '../config/errors.js'
+import { sendError, NotFound } from '../config/errors.js'
 import Item from '../models/items.js'
 
 export const updateItem = async (req, res) => {
@@ -28,13 +28,36 @@ export const updateItem = async (req, res) => {
 export const getItems = async (req, res) => {
   try {
     console.log('GET ROUTE HIT')
-    const items = await Item.find()
+    const items = await Item.find().populate('owner')
     return res.json(items)
   } catch (err) {
     sendError(err, res)
   } 
 }
 
+//* GET ITEM
+// endpoint: /items/:id
+
+export const getSingleItem = async (req, res) => {
+  try {
+    console.log('GET SINGLE')
+    const { id } = req.params
+    console.log(id)
+
+    const item = await Item.findById(id).populate('owner')
+
+    if (!item) throw new NotFound('Item not found on database')
+
+    return res.json(item)
+
+  } catch (err) {
+    sendError(err, res)
+  }
+}
+
+
+//* POST ITEM
+// endpoint: /items
 export const createItem = async (req, res) => {
   try {
     console.log('POST ROUTE HIT')
@@ -47,7 +70,7 @@ export const createItem = async (req, res) => {
 
 }
 
-
+//* DELETE ROUTE
 // Delete route 
 export const deleteItem = async (req, res) => {
   try {

@@ -9,7 +9,7 @@ export const registerUser = async (req, res) => {
     console.log('REQ BODY', req.body)
     const newUser = await User.create(req.body)
     console.log(newUser)
-    return res.json({ message: `Welcome ${newUser.username}`})
+    return res.json({ message: `Welcome ${newUser.username}` })
   } catch (err) {
     return sendError(err, res)
   }
@@ -19,10 +19,11 @@ export const registerUser = async (req, res) => {
 export const loginUser = async (req, res) => {
   try {
     const { email, password } = req.body
+    console.log('REQ.BODY', req.body)
     const userToLogin = await User.findOne({ email: email })
-    console.log(userToLogin)
+    console.log('userToLogin', userToLogin)
     const userIsValidated = await userToLogin.validatePassword(password)
-    if(!userToLogin || !userIsValidated){
+    if (!userToLogin || !userIsValidated){
       throw new Error()
     }
 
