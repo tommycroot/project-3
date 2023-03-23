@@ -15,8 +15,8 @@ const userSchema = new mongoose.Schema({
   location: { type: String, required: true, maxlength: 30 },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
-  items: { type: mongoose.Schema.ObjectId, ref: 'Item', required: true },
-  ratings : [sellerRatingsSchema]
+  items: [{ type: mongoose.Schema.ObjectId, ref: 'Item', required: true }],
+  ratings: [sellerRatingsSchema],
 })
 
 
@@ -27,19 +27,19 @@ userSchema.virtual('averageRating')
     if (!this.ratings.length) return 'No ratings for the user'
     
     const sum = this.ratings.reduce((acc, rating) => {
-      return acc + rating.rating;
+      return acc + rating.rating
     }, 0)
     
     return parseFloat((sum / this.ratings.length).toFixed(2))
   })
 
 
-// validation below 
-userSchema.virtual('items', {
-  ref: 'Item',
-  localField: '_id',
-  foreignField: 'owner',
-})
+// // validation below 
+// userSchema.virtual('items', {
+//   ref: 'Item',
+//   localField: '_id',
+//   foreignField: 'owner',
+// })
 
 
 userSchema.set('toJSON', {
