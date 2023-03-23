@@ -1,17 +1,5 @@
-<<<<<<< HEAD
 import Item from '../models/items.js'
 
-
-//Get Items
-
-export const getItems = async (req, res) => {
-  try {
-    const items = await Item.find()
-    return res.status(200).json(items)
-  } catch (err) {
-    return res.status(500).json({ message: err.message })
-  }
-}
 
 
 // Delete route 
@@ -28,7 +16,7 @@ export const deleteItem = async (req, res) => {
   } catch (err) {
     return sendError(err, res)
   }
-
+}
 =======
 import { sendError } from '../config/errors.js'
 import Item from '../models/items.js'
