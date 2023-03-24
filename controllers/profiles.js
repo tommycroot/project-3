@@ -1,4 +1,5 @@
 import User from '../models/users.js'
+import Item from '../models/items.js'
 import { sendError, NotFound } from '../config/errors.js'
 
 // * GET LOGGED IN USER'S OWN PROFILE
@@ -26,13 +27,21 @@ export const getSingleProfile = async (req, res) => {
 
     const { profileId } = req.params
 
-    console.log(profileId)
+    const profile = await User.findById(profileId)
 
-    const profile = await User.findById(profileId).populate('items')
+    const items = await Item.find()
+
+    const userItems = items.filter(item => {
+      if (JSON.stringify(item.owner._id) === JSON.stringify(profile._id) ) return item
+    })
+
+    const combined = { ...profile._doc, items: userItems }
+
+    delete combined.password
 
     if (!profile) throw new NotFound('Profile not found')
 
-    console.log(profile)
+    return res.json(combined)
 
   } catch (err) {
     sendError(err, res)

@@ -1,4 +1,5 @@
 import User from '../models/users.js'
+import { sendError, NotFound } from '../config/errors.js'
 
 
 //! Post rating 
@@ -7,7 +8,7 @@ export const addRating = async (req, res) => {
     const { id } = req.params
     const seller = await User.findById(id)
 
-    if(!seller) throw new NotFound('Record Not Found')
+    if (!seller) throw new NotFound('Record Not Found')
 
     const ratingToAdd = { ...req.body, owner: req.loggedInUser._id }
     

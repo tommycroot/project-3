@@ -3,6 +3,13 @@ import mongoose from 'mongoose'
 
 //! Item Schema 
 
+const messageUserSchema = new mongoose.Schema({
+  text: { type: String, required: true },
+  owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
+}, {
+  timestamps: true,
+})
+
 const itemSchema = new mongoose.Schema({
   title: { type: String, required: true, maxlength: 50 },
   category: { type: String, required: true, maxlength: 30 },
@@ -13,13 +20,6 @@ const itemSchema = new mongoose.Schema({
   image: { type: String, required: true },
   owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
   messages: [messageUserSchema],
-})
-
-const messageUserSchema = new mongoose.Schema({
-  text: { type: String, required: true },
-  owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
-}, {
-  timestamps: true,
 })
 
 export default mongoose.model('Item', itemSchema)
