@@ -5,29 +5,29 @@ import { NotFound, Unauthorized, sendError } from '../config/errors.js'
 // Endpoint: /items/:itemId/messages
 export const addMessage = async (req, res) => {
   try {
-    const { id } = req.params
-    const item = await Item.findById(id)
+    const { itemId } = req.params
+    const item = await Item.findById(itemId)
     if(!item) throw new NotFound('Item Not Found')
     const messageToAdd = { ...req.body, owner: req.loggedInUser._id }
     item.messages.push(messageToAdd)
     console.log('ITEM ->', item)
     await item.save()
-    return res.status(201).json(record)
+    return res.status(201).json(item)
   } catch (err) {
     return sendError(err, res)
   }
 }
 
 // * DELETE Message
-// Endpoint: /itesm/:itemId/messages/:messageId
+// Endpoint: /items/:itemId/messages/:messageId
 export const deleteMessage = async (req, res) => {
   try {
     const { itemId, messageId } = req.params
     const loggedInUserId = req.loggedInUser._id
     const item = await Item.findById(itemId)
-    if (!item) throw new NotFound('Record not found')
+    if (!item) throw new NotFound('Message not found')
     const messageToDelete = item.messages.id(messageId)
-    if(!messageToDelete) throw new NotFound('Review not found')
+    if(!messageToDelete) throw new NotFound('Message not found')
     if(!messageToDelete.owner.equals(loggedInUserId)){
       console.log('NOT THE OWNER')
       throw new Unauthorized()

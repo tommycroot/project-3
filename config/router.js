@@ -2,7 +2,7 @@ import express from 'express'
 const router = express.Router()
 import { getItems, createItem, deleteItem, updateItem, getSingleItem } from '../controllers/items.js'
 //import { addRating, deleteRating } from '../controllers/ratings.js'
-//import { addMessage, updateMessage, deleteMessage } from '../controllers/messages.js'
+import { addMessage, deleteMessage } from '../controllers/messages.js'
 import { registerUser, loginUser } from '../controllers/auth.js'
 import { secureRoute } from './secureRoute.js'
 import { profileView, getSingleProfile } from '../controllers/profiles.js'
@@ -28,8 +28,8 @@ router.route('/login')
 // router.route('/items/:itemId/ratings/:ratingId')
 //   .delete(secureRoute, deleteRating)
 
-// router.route('/items/:itemId/messages')
-//   .post(secureRoute, addMessage)
+router.route('/items/:itemId/messages')
+  .post(secureRoute, addMessage)
 
 // router.route('/items/:itemId/messages/:messageId')
 //   .put(secureRoute, updateMessage)
