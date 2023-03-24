@@ -23,18 +23,18 @@ const userSchema = new mongoose.Schema({
 //Average rating 
 
 userSchema.virtual('averageRating')
-  .get(function() {
+  .get(function () {
     if (!this.ratings.length) return 'No ratings for the user'
-    
+
     const sum = this.ratings.reduce((acc, rating) => {
       return acc + rating.rating
     }, 0)
-    
+
     return parseFloat((sum / this.ratings.length).toFixed(2))
   })
 
 
-// // validation below 
+// //validation below 
 // userSchema.virtual('items', {
 //   ref: 'Item',
 //   localField: '_id',

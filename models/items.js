@@ -1,5 +1,14 @@
 import mongoose from 'mongoose'
 
+//! Message Schema 
+
+const messageUserSchema = new mongoose.Schema({
+  text: { type: String, required: true },
+  owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
+}, {
+  timestamps: true,
+})
+
 
 //! Item Schema 
 
@@ -15,12 +24,6 @@ const itemSchema = new mongoose.Schema({
   messages: [messageUserSchema],
 })
 
-const messageUserSchema = new mongoose.Schema({
-  text: { type: String, required: true },
-  owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
-}, {
-  timestamps: true,
-})
 
 export default mongoose.model('Item', itemSchema)
 
