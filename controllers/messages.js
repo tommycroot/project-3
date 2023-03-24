@@ -19,15 +19,15 @@ export const addMessage = async (req, res) => {
 }
 
 // * DELETE Message
-// Endpoint: /itesm/:itemId/messages/:messageId
+// Endpoint: /items/:itemId/messages/:messageId
 export const deleteMessage = async (req, res) => {
   try {
     const { itemId, messageId } = req.params
     const loggedInUserId = req.loggedInUser._id
     const item = await Item.findById(itemId)
-    if (!item) throw new NotFound('Record not found')
+    if (!item) throw new NotFound('Message not found')
     const messageToDelete = item.messages.id(messageId)
-    if (!messageToDelete) throw new NotFound('Review not found')
+    if (!messageToDelete) throw new NotFound('Message not found')
     if (!messageToDelete.owner.equals(loggedInUserId)){
       console.log('NOT THE OWNER')
       throw new Unauthorized()
