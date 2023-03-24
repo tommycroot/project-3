@@ -5,8 +5,8 @@ import { NotFound, Unauthorized, sendError } from '../config/errors.js'
 // Endpoint: /items/:itemId/messages
 export const addMessage = async (req, res) => {
   try {
-    const { id } = req.params
-    const item = await Item.findById(id)
+    const { itemId } = req.params
+    const item = await Item.findById(itemId)
     if (!item) throw new NotFound('Item Not Found')
     const messageToAdd = { ...req.body, owner: req.loggedInUser._id }
     item.messages.push(messageToAdd)
