@@ -60,7 +60,7 @@ export const getSingleItem = async (req, res) => {
 // endpoint: /items
 export const createItem = async (req, res) => {
   try {
-    console.log('POST ROUTE HIT')
+    req.body.owner = req.loggedInUser._id
     const newItem = await Item.create(req.body)
     console.log(newItem)
     return res.status(201).json(newItem)

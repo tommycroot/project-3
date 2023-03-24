@@ -13,6 +13,7 @@ export const addMessage = async (req, res) => {
     console.log('ITEM ->', item)
     await item.save()
     return res.status(201).json(item)
+    return res.status(201).json(item)
   } catch (err) {
     return sendError(err, res)
   }

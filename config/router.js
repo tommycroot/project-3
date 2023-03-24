@@ -1,7 +1,7 @@
 import express from 'express'
 const router = express.Router()
 import { getItems, createItem, deleteItem, updateItem, getSingleItem } from '../controllers/items.js'
-//import { addRating, deleteRating } from '../controllers/ratings.js'
+import { addRating, deleteRating } from '../controllers/ratings.js'
 import { addMessage, deleteMessage } from '../controllers/messages.js'
 import { registerUser, loginUser } from '../controllers/auth.js'
 import { secureRoute } from './secureRoute.js'
@@ -22,18 +22,17 @@ router.route('/register')
 router.route('/login')
   .post(loginUser)
 
-// router.route('/items/:id/ratings')
-//   .post(secureRoute, addRating)
+router.route('/users/:userId/ratings')
+  .post(secureRoute, addRating)
 
-// router.route('/items/:itemId/ratings/:ratingId')
-//   .delete(secureRoute, deleteRating)
+router.route('/users/:userId/ratings/:ratingId')
+  .delete(secureRoute, deleteRating)
 
 router.route('/items/:itemId/messages')
   .post(secureRoute, addMessage)
 
-// router.route('/items/:itemId/messages/:messageId')
-//   .put(secureRoute, updateMessage)
-//   .delete(secureRoute, deleteMessage)
+router.route('/items/:itemId/messages/:messageId')
+  .delete(secureRoute, deleteMessage)
 
 router.route('/profile')
   .get(secureRoute, profileView)
