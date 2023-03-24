@@ -7,12 +7,12 @@ export const addMessage = async (req, res) => {
   try {
     const { id } = req.params
     const item = await Item.findById(id)
-    if(!item) throw new NotFound('Item Not Found')
+    if (!item) throw new NotFound('Item Not Found')
     const messageToAdd = { ...req.body, owner: req.loggedInUser._id }
     item.messages.push(messageToAdd)
     console.log('ITEM ->', item)
     await item.save()
-    return res.status(201).json(record)
+    return res.status(201).json(item)
   } catch (err) {
     return sendError(err, res)
   }
@@ -27,8 +27,8 @@ export const deleteMessage = async (req, res) => {
     const item = await Item.findById(itemId)
     if (!item) throw new NotFound('Record not found')
     const messageToDelete = item.messages.id(messageId)
-    if(!messageToDelete) throw new NotFound('Review not found')
-    if(!messageToDelete.owner.equals(loggedInUserId)){
+    if (!messageToDelete) throw new NotFound('Review not found')
+    if (!messageToDelete.owner.equals(loggedInUserId)){
       console.log('NOT THE OWNER')
       throw new Unauthorized()
     }

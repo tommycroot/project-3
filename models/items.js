@@ -12,6 +12,13 @@ const messageUserSchema = new mongoose.Schema({
 
 //! Item Schema 
 
+const messageUserSchema = new mongoose.Schema({
+  text: { type: String, required: true },
+  owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
+}, {
+  timestamps: true,
+})
+
 const itemSchema = new mongoose.Schema({
   title: { type: String, required: true, maxlength: 50 },
   category: { type: String, required: true, maxlength: 30 },
@@ -24,6 +31,9 @@ const itemSchema = new mongoose.Schema({
   messages: [messageUserSchema],
 })
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> development
 export default mongoose.model('Item', itemSchema)
 

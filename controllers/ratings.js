@@ -1,5 +1,6 @@
 import User from '../models/users.js'
 import { sendError, NotFound, Unauthorized } from '../config/errors.js'
+import { sendError, NotFound } from '../config/errors.js'
 
 
 //! Post rating 
