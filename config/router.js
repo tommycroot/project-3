@@ -1,6 +1,6 @@
 import express from 'express'
 const router = express.Router()
-import { getItems, createItem, deleteItem, updateItem, getSingleItem } from '../controllers/items.js'
+import { getItems, createItem, deleteItem, updateItem, getSingleItem, swapItems } from '../controllers/items.js'
 import { addRating, deleteRating } from '../controllers/ratings.js'
 import { addMessage, deleteMessage } from '../controllers/messages.js'
 import { registerUser, loginUser } from '../controllers/auth.js'
@@ -39,5 +39,8 @@ router.route('/profile')
 
 router.route('/profile/:profileId')
   .get(secureRoute, getSingleProfile)
+
+router.route('/trade/:idA/:idB')
+  .put(secureRoute, swapItems)  
 
 export default router

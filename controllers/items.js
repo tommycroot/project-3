@@ -1,5 +1,5 @@
 // * PUT route
-import { sendError, NotFound } from '../config/errors.js'
+import { sendError, NotFound, Unauthorized } from '../config/errors.js'
 import Item from '../models/items.js'
 
 export const updateItem = async (req, res) => {
@@ -83,5 +83,42 @@ export const deleteItem = async (req, res) => {
     return res.status(200).json({ message: 'Item deleted' })
   } catch (err) {
     return sendError(err, res)
+  }
+}
+
+//* SWAP ITEM
+//Put request
+//endpoint: /trade/:idA/:idB
+
+export const swapItems = async (req, res) => {
+  try {
+
+    const { idA, idB } = req.params
+
+    const loggedUser = JSON.stringify(req.loggedInUser._id)
+
+    const itemA = await Item.findById(idA)
+    const itemB = await Item.findById(idB)
+
+    const itemAOwner = JSON.stringify(itemA.owner)
+    const itemBOwner = JSON.stringify(itemB.owner)
+
+    if (loggedUser === itemAOwner) {
+
+      const updatedA = { ...itemA._doc, owner: itemB.owner }
+      const updatedB = { ...itemB._doc, owner: itemA.owner }
+
+      Object.assign(itemA, updatedA)
+      Object.assign(itemB, updatedB)
+      await itemA.save()
+      await itemB.save()
+  
+      return res.status(200).json(itemB)
+      
+    } else {
+      throw new Unauthorized()
+    } 
+  } catch (err) {
+    sendError(err, res)
   }
 }
