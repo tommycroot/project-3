@@ -29,6 +29,8 @@ export const getSingleProfile = async (req, res) => {
 
     const profile = await User.findById(profileId)
 
+    if (!profile) throw new NotFound('Profile not found')
+
     const items = await Item.find()
 
     const userItems = items.filter(item => {
@@ -38,8 +40,6 @@ export const getSingleProfile = async (req, res) => {
     const combined = { ...profile._doc, items: userItems }
 
     delete combined.password
-
-    if (!profile) throw new NotFound('Profile not found')
 
     return res.json(combined)
 
