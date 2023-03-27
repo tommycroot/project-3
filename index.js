@@ -26,7 +26,7 @@ const startServer = async () => {
     })
 
     //Router goes here
-    app.use(router)
+    app.use('/api', router)
 
     //? 404 catch all middleware
     app.use((req, res) => {

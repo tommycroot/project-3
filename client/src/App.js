@@ -1,16 +1,25 @@
-import { useEffect } from 'react'
+//! React
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
 
-const App = () => {
-  useEffect(() => {
-    const getData = async () => {
-      const { data } = await axios.get('/api/products/') // * <-- replace with your endpoint
-      console.log(data)
-    }
-    getData()
-  })
+//!Components
+import Home from './components/Home'
 
-  return <h1>Hello World</h1>
+const App = () => {
+
+  return (
+
+    <div className="site-wrapper">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} /> 
+        </Routes>
+      </BrowserRouter>
+    </div>
+
+  )
+
 }
 
 export default App
