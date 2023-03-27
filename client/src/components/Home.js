@@ -9,10 +9,14 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
 
+import Spinner from './Spinner.js'
+import Error from './Error.js'
+
 const Home = () => {
-  console.log('HOME PAGE')
+  
 
   const [items, setItems] = useState([])
+  const [error, setError] = useState('')
 
   useEffect(() => {
     const getData = async () => {
@@ -21,6 +25,7 @@ const Home = () => {
         setItems(data.sort((a, b) => a.swapValue < b.swapValue ? 1 : -1))
       } catch (err) {
         console.log(err.message)
+        setError(err.message)
       }
     }
     getData()
@@ -34,33 +39,47 @@ const Home = () => {
           <Col xs="12">
             <h1 className="display-4 mb-4 text-center">Items available for swap!</h1>
           </Col>
-          {items.map(item => {
-            const { _id, title, category, description, location, condition, swapValue, image, owner } = item
 
-            return (
-              <Col key={_id} lg='4' className='item'>
-                <Link to={`/items/${_id}`}>
-                  <Card>
-                    <Card.Img variant="top" src={image} className="thumbnail"/>
-                    <Card.Body>
-                      <Card.Title>{title}</Card.Title>
-                      <Card.Subtitle>£{swapValue}</Card.Subtitle>
-                      <Card.Text>{owner.location}</Card.Text>
-                      <Card.Text>{owner.username}</Card.Text>
-                    </Card.Body>
-                  </Card>
-                </Link>
-              </Col>
-            )
+          {items.length > 0 ?
+            items.map(item => {
+              const { _id, title, swapValue, image, owner } = item
 
-          })}
+              return (
+                <Col key={_id} lg="4" sm="12" className="item">
+                  <Link to={`/items/${_id}`}>
+                    <Card>
+                      <div style={{ backgroundImage: `url('${image}')` }} className="thumbnail"></div>
+                      <Card.Body>
+                        <Card.Title>{title}</Card.Title>
+                        <Card.Subtitle>£{swapValue}</Card.Subtitle>
+                        <Card.Text>
+                          <p>
+                            {owner.username}<br></br>
+                            {owner.location}
+                          </p>
+                        </Card.Text>
+                      </Card.Body>
+                    </Card>
+                  </Link>
+                </Col>
+              )
+
+            })
+            :
+            <>
+              { error ?
+                <Error error={error} />
+                :
+                <Spinner />}
+            </>
+          }
 
         </Row>
       </Container>
     </>
 
   )
-  
+
 
 }
 

@@ -2,9 +2,29 @@
   box-sizing: border-box;
 }
 
-.thumbnail {
-  max-width: 400px;
+body {
+  margin: 0;
+}
+
+.item {
+  margin-bottom: 20px;
   
+}
+
+a {
+  text-decoration: none;
+}
+
+.thumbnail {
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+}
+
+.spinner {
+  height: 300px;
 }
 
 .form-page {  
