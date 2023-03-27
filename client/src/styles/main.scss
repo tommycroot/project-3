@@ -6,3 +6,19 @@
   max-width: 400px;
   
 }
+
+.singleImage {
+  max-width: 50vw;
+  max-height: 50vh;
+}
+
+.imageInfoRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &:nth-child(2) {
+    margin-top: 50px; // Optional - add some spacing between the rows
+  }
+}
+
