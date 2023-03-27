@@ -7,6 +7,8 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
+import NavBar from '../NavBar.js'
+
 const Register = () => {
 
   const navigate = useNavigate()
@@ -47,6 +49,7 @@ const Register = () => {
         <Row>
           {/* This Col is being renderes as a form element as we specified the "as" prop */}
           {/* As this is a form element, we can submit it and listen for the event */}
+          <NavBar />
           <Col as="form" xs={{ span: 10, offset: 1 }} sm={{ span: 8, offset: 2 }} md={{ span: 6, offset: 3 }} onSubmit={handleSubmit}>
             <h1 className='display-6 text-center'>Register</h1>
             {/* Username */}
