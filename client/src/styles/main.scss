@@ -7,22 +7,6 @@ body {
 }
 
 
-#hero {
-  border-bottom: 5px;
-  margin-top: 80px;
-  position: relative;
-  background-image: '../images/hagl.png';
-  background-color: red;
-  background-size: 30px;
-
-  .haglLogo {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-}
-
-
 .item {
   margin-bottom: 20px;
   
@@ -89,5 +73,20 @@ a {
       border: 1px solid rgba(0,0,0,0.2);
       padding: 5px;
     }
+  }
+}
+
+#hero {
+  border-bottom: 5px;
+  margin-top: 80px;
+  position: relative;
+  background-image: '../images/hagl.png';
+  background-color: red;
+  background-size: 30px;
+
+  .haglLogo {
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 }

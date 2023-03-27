@@ -30,8 +30,8 @@ const ItemPage = () => {
 
   return (
     <>
-      <div className="heroSection" id ='hero'></div>
       <Container>
+        <div className="heroSection" id ='hero'></div>
         <Row >
           <Col className='titleLocation'>
             <h1>{title}</h1>
@@ -64,3 +64,5 @@ const ItemPage = () => {
     </>
   )
 }
+
+export default ItemPage

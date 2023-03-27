@@ -22,15 +22,15 @@ const Profile = () => {
 
 
 
-  const empty = []
+  
 
   useEffect(() => {
     
     
+    
     const getInfo = async () => {
       try {
-        
-        setUserInfo(empty)
+      
         const { data } = await authenticated.get('/profile')
         setUserInfo(data)
       } catch (err) {
