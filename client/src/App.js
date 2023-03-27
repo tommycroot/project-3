@@ -9,6 +9,7 @@ import ItemPage from './components/items/ItemPage'
 import Register from './components/auth/Register'
 import Login from './components/auth/Login'
 import ItemNew from './components/items/ItemNew'
+import ItemEdit from './components/items/ItemEdit'
 
 const App = () => {
 
@@ -20,7 +21,8 @@ const App = () => {
           <Route path="/items/:id" element={<ItemPage />} />
           <Route path="/register" element={<Register />} /> 
           <Route path="/login" element={<Login />} /> 
-          <Route path="/itemNew" element={<ItemNew />} /> 
+          <Route path="/item/new" element={<ItemNew />} /> 
+          <Route path="/item/:itemId/edit" element={<ItemEdit />} /> 
         </Routes>
       </BrowserRouter>
     </div>

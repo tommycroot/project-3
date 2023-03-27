@@ -43,7 +43,7 @@ const Home = () => {
           </Col>
 
           {items.length > 0 ?
-            items.map(item => {
+            items.map(item => { 
               const { _id, title, swapValue, image, owner } = item
 
               return (
