@@ -10,6 +10,7 @@ import Register from './components/auth/Register'
 import Login from './components/auth/Login'
 import ItemNew from './components/items/ItemNew'
 import ItemEdit from './components/items/ItemEdit'
+import Profile from './components/Profile'
 
 const App = () => {
 
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/login" element={<Login />} /> 
           <Route path="/item/new" element={<ItemNew />} /> 
           <Route path="/item/:itemId/edit" element={<ItemEdit />} /> 
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </BrowserRouter>
     </div>

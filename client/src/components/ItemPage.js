@@ -32,7 +32,7 @@ const ItemPage = () => {
     <Container>
       <>
         <Row >
-          <Col class='titleLocation'>
+          <Col className='titleLocation'>
             <span> <h1>{title}</h1>{location}</span>
           </Col>
         </Row>
@@ -45,11 +45,11 @@ const ItemPage = () => {
               <p>Condition: {condition}</p>
               <p>£{swapValue}</p>
             </div>
-            <Button class = 'swapNow'>Swap Now</Button>
-            <Button Class = 'editItem'>Edit Item</Button>
+            <Button className = 'swapNow'>Swap Now</Button>
+            <Button className = 'editItem'>Edit Item</Button>
           </Col>
-          <Row class ='descriptionRow'>
-            <Col> <p>{description}</p></Col>
+          <Row className ='descriptionRow'>
+            <Col> <div>{description}</div></Col>
           </Row>
         </Row>
       </>
