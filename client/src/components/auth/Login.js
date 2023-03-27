@@ -7,6 +7,8 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
+import NavBar from '../NavBar.js'
+
 const Login = () => {
 
   // ! Location variables
@@ -41,6 +43,7 @@ const Login = () => {
     <main className="form-page">
       <Container>
         <Row>
+          <NavBar />
           <Col as="form" xs={{ span: 10, offset: 1 }} sm={{ span: 8, offset: 2 }} md={{ span: 6, offset: 3 }} onSubmit={handleSubmit}>
             <h1 className='display-6 text-center'>Login</h1>
             <label htmlFor="email">Email</label>

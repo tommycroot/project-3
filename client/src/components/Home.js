@@ -11,6 +11,7 @@ import Card from 'react-bootstrap/Card'
 
 import Spinner from './Spinner.js'
 import Error from './Error.js'
+import NavBar from './NavBar.js'
 
 const Home = () => {
   
@@ -36,6 +37,7 @@ const Home = () => {
     <>
       <Container>
         <Row>
+          <NavBar />
           <Col xs="12">
             <h1 className="display-4 mb-4 text-center">Items available for swap!</h1>
           </Col>
