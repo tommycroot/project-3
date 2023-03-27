@@ -29,11 +29,12 @@ const ItemPage = () => {
   const { title, image, description, swapValue, condition, location } = item
 
   return (
-    <Container>
-      <>
+    <>
+      <div className="heroSection" id ='hero'></div>
+      <Container>
         <Row >
-          <Col class='titleLocation'>
-            <span> <h1>{title}</h1>{location}</span>
+          <Col className='titleLocation'>
+            <h1>{title}</h1>
           </Col>
         </Row>
         <Row className="imageInfoRow">
@@ -42,18 +43,25 @@ const ItemPage = () => {
           </Col>
           <Col md={6} className='itemInfo'>
             <div>
+              <p>Location: {location}</p>
               <p>Condition: {condition}</p>
-              <p>£{swapValue}</p>
+              <p>Approximate Value: £{swapValue}</p>
             </div>
-            <Button class = 'swapNow'>Swap Now</Button>
-            <Button Class = 'editItem'>Edit Item</Button>
+            <Button className='swapNow'>Swap Now</Button>
+            <Button className='editItem'>Edit Item</Button>
           </Col>
-          <Row class ='descriptionRow'>
-            <Col> <p>{description}</p></Col>
+          <Row className='description'>
+            <Col>
+              <div>
+                Description <br />
+                {description}
+              </div>
+
+            </Col>
           </Row>
         </Row>
-      </>
-    </Container>
+      </Container>
+    </>
   )
 }
 

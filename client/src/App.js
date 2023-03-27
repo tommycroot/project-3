@@ -5,7 +5,7 @@ import axios from 'axios'
 
 //!Components
 import Home from './components/Home'
-import ItemPage from './components/ItemPage'
+import ItemPage from './components/items/ItemPage'
 import Register from './components/auth/Register'
 import Login from './components/auth/Login'
 import ItemNew from './components/items/ItemNew'
