@@ -29,7 +29,7 @@ const ItemEdit = () => {
   // ! On Mount
   useEffect(() => {
 
-    (!isAuthenticated() || !userIsOwner()) && navigate(`/item/${itemId}`)
+    (!isAuthenticated() || !userIsOwner()) && navigate(`/items/${itemId}`)
 
     const getItem = async () => {
       try {
@@ -47,7 +47,7 @@ const ItemEdit = () => {
     e.preventDefault()
     try {
       await authenticated.put(`items/${itemId}`, formFields)
-      navigate(`/item/${itemId}`)
+      navigate(`/items/${itemId}`)
     } catch (err) {
       console.log(err)
       setError(err.response.data.message)
