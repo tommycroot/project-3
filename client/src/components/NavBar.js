@@ -7,6 +7,7 @@ import { useEffect } from 'react'
 import { isAuthenticated, removeToken } from './helpers/auth'
 
 
+
 const NavBar = () => {
 
   const navigate = useNavigate()
