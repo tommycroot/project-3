@@ -30,8 +30,10 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const { data } = await axios.post('api/login', formFields)
+      const { data } = await axios.post('/api/login', formFields)
       localStorage.setItem('HAGL-TOKEN', data.token)
+      console.log('DATA TOKEN', data.token)
+      axios.defaults.headers.common['Authorization'] = `Bearer ${data.token}`
       navigate('/')
     } catch (err) {
       console.log('error', err)
@@ -43,7 +45,6 @@ const Login = () => {
     <main className="form-page">
       <Container>
         <Row>
-          <NavBar />
           <Col as="form" xs={{ span: 10, offset: 1 }} sm={{ span: 8, offset: 2 }} md={{ span: 6, offset: 3 }} onSubmit={handleSubmit}>
             <h1 className='display-6 text-center'>Login</h1>
             <label htmlFor="email">Email</label>

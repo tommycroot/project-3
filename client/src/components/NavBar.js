@@ -1,4 +1,5 @@
 //!Bootstrap components
+import axios from 'axios'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
@@ -12,12 +13,11 @@ const NavBar = () => {
 
   const navigate = useNavigate()
   const location = useLocation()
-
-
-
+  
 
   const handleLogOut = () => {
     removeToken()
+    delete axios.defaults.headers.common['Authorization']
     navigate('/login')
   }
 

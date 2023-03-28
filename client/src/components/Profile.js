@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 
-import { authenticated, isAuthenticated, userIsOwner } from './helpers/auth'
+import { authenticated, getPayload, getToken, isAuthenticated, userIsOwner } from './helpers/auth'
 
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
@@ -17,21 +17,18 @@ const Profile = () => {
 
   console.log('PROFILE PAGE')
 
-  const [userInfo, setUserInfo] = useState([])
-  const [error, setError] = useState('')
-
-
-
-  
+  const [userInfo, setUserInfo] = useState(null)
 
   useEffect(() => {
     
     
-    
     const getInfo = async () => {
       try {
-      
-        const { data } = await authenticated.get('/profile')
+        console.log('USER INFO', userInfo)
+        console.log('PAYLOAD', getPayload())
+        const { data } = await authenticated.get('/api/profile')
+        //const response = await axios.get('/api/profile')
+        console.log('response', data)
         setUserInfo(data)
       } catch (err) {
         console.log(err.message)
@@ -39,24 +36,26 @@ const Profile = () => {
       }
     }
     getInfo()
-    console.log(userInfo)
   }, [])
 
-  const { username, location, averageRating, items } = userInfo
+  
+  const [error, setError] = useState('')
+
+  //const { username, location, averageRating, items } = userInfo
 
   return (
     <Container>
-      <NavBar />
+      {userInfo && 
       <Row>
         <Col xs="12">
-          <h1>Welcome back, {username}</h1>
+          <h1>Welcome back, {userInfo.username}</h1>
         </Col>
 
         <Col>
           <h2>Listed items:</h2>
           <div>
-            {items ?
-              items.map(item => {
+            {userInfo.items ?
+              userInfo.items.map(item => {
                 const { _id, title, swapValue, image } = item
 
                 return (
@@ -85,7 +84,7 @@ const Profile = () => {
           </div>
         </Col>
 
-      </Row>
+      </Row>}
 
     </Container>
 

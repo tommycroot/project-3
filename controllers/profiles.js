@@ -7,10 +7,12 @@ import { sendError, NotFound } from '../config/errors.js'
 export const profileView = async (req, res) => {
   try {
     console.log('PROF ROUTE HIT')
+    
+    console.log('USER ID')
 
     const profile = await req.loggedInUser.populate('items')
 
-    console.log(profile)
+    console.log('PROFILE', profile)
 
     return res.json(profile)
 

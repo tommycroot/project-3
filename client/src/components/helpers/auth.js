@@ -27,17 +27,24 @@ export const getToken = () => {
   return localStorage.getItem(tokenName)
 }
 
-export const authenticated = axios.create({
-  baseURL: '/api',
-  headers: {
-    Authorization: `Bearer ${getToken()}`,
-  },
+
+export const authenticated = axios.create()
+authenticated.interceptors.request.use(config => {
+  if (getToken()) {
+    config.headers['Authorization'] = `Bearer ${getToken()}`
+  } else {
+    config.headers['Authorization'] = null
+  }
+  return config
+}, (error) => {
+  console.log('ERROR', error)
 })
 
 export const userIsOwner = (item) => {
   const payload = getPayload()
   if (!payload) return
   if (item){
+    console.log('THIS IS TEH ITEM', item)
     return payload.sub === item.addedBy._id
   }
 }

@@ -11,12 +11,17 @@ import Login from './components/auth/Login'
 import ItemNew from './components/items/ItemNew'
 import ItemEdit from './components/items/ItemEdit'
 import Profile from './components/Profile'
+import NavBar from './components/NavBar'
+import { getToken } from './components/helpers/auth'
 
 const App = () => {
+
+  
 
   return (
     <div className="site-wrapper">
       <BrowserRouter>
+        <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/items/:id" element={<ItemPage />} />

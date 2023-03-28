@@ -11,10 +11,9 @@ import Card from 'react-bootstrap/Card'
 
 import Spinner from './Spinner.js'
 import Error from './Error.js'
-import NavBar from './NavBar.js'
 
 const Home = () => {
-  
+
 
   const [items, setItems] = useState([])
   const [error, setError] = useState('')
@@ -37,13 +36,12 @@ const Home = () => {
     <>
       <Container>
         <Row>
-          <NavBar />
           <Col xs="12">
             <h1 className="display-4 mb-4 text-center">Items available for swap!</h1>
           </Col>
 
           {items.length > 0 ?
-            items.map(item => { 
+            items.map(item => {
               const { _id, title, swapValue, image, owner } = item
 
               return (
@@ -55,10 +53,7 @@ const Home = () => {
                         <Card.Title>{title}</Card.Title>
                         <Card.Subtitle>£{swapValue}</Card.Subtitle>
                         <Card.Text>
-                          <p>
-                            {owner.username}<br></br>
-                            {owner.location}
-                          </p>
+                          <p>{owner.username}<br></br>{owner.location}</p>
                         </Card.Text>
                       </Card.Body>
                     </Card>
@@ -69,7 +64,7 @@ const Home = () => {
             })
             :
             <>
-              { error ?
+              {error ?
                 <Error error={error} />
                 :
                 <Spinner />}
