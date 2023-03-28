@@ -7,6 +7,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { Button } from 'react-bootstrap'
 
+import { userIsOwner } from '../helpers/auth.js'
 
 const ItemPage = () => {
   console.log('itempage')
@@ -31,7 +32,7 @@ const ItemPage = () => {
   return (
     <>
       <Container>
-        <div className="heroSection" id ='hero'></div>
+        <div className="heroSection" id='hero'></div>
         <Row >
           <Col className='titleLocation'>
             <h1>{title}</h1>
@@ -48,7 +49,7 @@ const ItemPage = () => {
               <p>Approximate Value: £{swapValue}</p>
             </div>
             <Button className='swapNow'>Swap Now</Button>
-            <Button className='editItem'>Edit Item</Button>
+            {userIsOwner(item) && <div><Button className='editItem'>Edit Item</Button></div> }
           </Col>
           <Row className='description'>
             <Col>

@@ -33,7 +33,8 @@ const ItemEdit = () => {
 
     const getItem = async () => {
       try {
-        const { data } = await axios.get(`items/${itemId}`)
+        const { data } = await axios.get(`/items/${itemId}`)
+        console.log('Data',data)
         setFormFields(data)
       } catch (err) {
         console.log(err)
