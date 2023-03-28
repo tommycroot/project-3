@@ -1,6 +1,7 @@
 import { Buffer } from 'buffer'
 import axios from 'axios'
 
+
 const tokenName = 'HAGL-TOKEN'
 
 export const getPayload = () => {
@@ -43,8 +44,7 @@ authenticated.interceptors.request.use(config => {
 export const userIsOwner = (item) => {
   const payload = getPayload()
   if (!payload) return
-  if (item){
-    console.log('THIS IS TEH ITEM', item)
+  if (item && item.owner) {
     return payload.sub === item.owner._id
   }
 }
