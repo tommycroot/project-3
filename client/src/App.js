@@ -27,8 +27,8 @@ const App = () => {
           <Route path="/items/:id" element={<ItemPage />} />
           <Route path="/register" element={<Register />} /> 
           <Route path="/login" element={<Login />} /> 
-          <Route path="/item/new" element={<ItemNew />} /> 
-          <Route path="/item/:itemId/edit" element={<ItemEdit />} /> 
+          <Route path="/items/new" element={<ItemNew />} /> 
+          <Route path="/items/:itemId/edit" element={<ItemEdit />} /> 
           <Route path="/profile" element={<Profile />} />
         </Routes>
       </BrowserRouter>
