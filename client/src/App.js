@@ -13,6 +13,7 @@ import ItemEdit from './components/items/ItemEdit'
 import Profile from './components/Profile'
 import NavBar from './components/NavBar'
 import { getToken } from './components/helpers/auth'
+import MessageForm from './components/messages/MessageForm'
 
 const App = () => {
 
@@ -30,6 +31,7 @@ const App = () => {
           <Route path="/items/new" element={<ItemNew />} /> 
           <Route path="/items/:itemId/edit" element={<ItemEdit />} /> 
           <Route path="/profile" element={<Profile />} />
+          <Route path="/sendmessage" element={<MessageForm />} /> 
         </Routes>
       </BrowserRouter>
     </div>
