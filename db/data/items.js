@@ -208,9 +208,87 @@ export default [
     condition: 'New',
     swapValue: 20,
     image: 'https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/61iC+dG0A+L._AC_UX385_.jpg/1/0279/4811/9401/products/51knE8yTtQL._AC_SL1000_1024x1024.jpg?v=1601658374',
-    }
+  },
 
+    {
+    title: 'Folding Camping Chair',
+    category: 'Sporting Goods',
+    description: 'Lightweight and portable camping chair with cup holder, used only once.',
+    location: 'Cardiff',
+    condition: 'Like new',
+    swapValue: 25,
+    image: 'https://assets.fatllama.com/images/large/camping-chair-folding-x-3-22446005.HEIC',
+  },
 
+  {
+    title: 'Wireless Bluetooth Headphones',
+    category: 'Electronics',
+    description: 'Over-ear wireless headphones with noise cancellation and long battery life, like new condition.',
+    location: 'Southampton',
+    condition: 'Used, in excellent condition',
+    swapValue: 80,
+    image: 'https://imagedelivery.net/ePR8PyKf84wPHx7_RYmEag/e90e81d7-8b81-43c0-63f6-8b656d6b2c00/86',
+  },
+
+  {
+    title: 'Vintage Typewriter',
+    category: 'Collectibles & Antiques',
+    description: 'Beautiful vintage typewriter in good working condition.',
+    location: 'Manchester',
+    condition: 'Used, in good condition',
+    swapValue: 150,
+    image: 'https://i.ebayimg.com/images/g/ogYAAOSwuR5hBw~t/s-l400.jpg',
+  },
+
+  {
+    title: 'Electric Pressure Cooker',
+    category: 'Home & Garden',
+    description: 'Multifunctional electric pressure cooker, used only a few times.',
+    location: 'London',
+    condition: 'Used, in great condition',
+    swapValue: 50,
+    image: 'https://imagedelivery.net/ePR8PyKf84wPHx7_RYmEag/dbf7aeba-b4ba-4ba3-0610-9770cbbdfc00/86',
+  },
+
+  {
+    title: 'Antique Pocket Watch',
+    category: 'Collectibles & Antiques',
+    description: 'Rare antique pocket watch from the early 1900s, in good condition.',
+    location: 'Birmingham',
+    condition: 'Used, in good condition',
+    swapValue: 300,
+    image: 'https://i.ebayimg.com/images/g/fuwAAOSworxex6wy/s-l500.jpg',
+  },
+
+  {
+    title: 'Wireless Keyboard and Mouse',
+    category: 'Electronics',
+    description: 'Wireless keyboard and mouse combo, in like new condition.',
+    location: 'Glasgow',
+    condition: 'Like new',
+    swapValue: 30,
+    image: 'https://imagedelivery.net/ePR8PyKf84wPHx7_RYmEag/b3819683-9570-4d30-df02-6ac88c1b9400/86',
+  },
+
+  {
+    title: 'Leather Wallet',
+    category: 'Clothing & Accessories',
+    description: 'High-quality leather wallet with RFID blocking, like new condition.',
+    location: 'Edinburgh',
+    condition: 'Like new',
+    swapValue: 40,
+    image: 'https://i.ebayimg.com/images/g/bpwAAOSwwPRgroFD/s-l500.jpg',
+  },
+
+  {
+    title: 'Bluetooth Smart Scale',
+    category: 'Health & Wellness',
+    description: 'Smart scale that measures weight, body fat, and other health metrics, in like new condition.',
+    location: 'Leeds',
+    condition: 'Like new',
+    swapValue: 60,
+    image: 'https://i.ebayimg.com/images/g/cSUAAOSwUH5j2FTo/s-l500.jpg',
+  },
 
 
 ]
