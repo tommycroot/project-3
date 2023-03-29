@@ -46,6 +46,8 @@ const Profile = () => {
     navigate('/items/new')
   }
 
+
+  
   return (
     <Container>
       {userInfo &&
@@ -56,7 +58,7 @@ const Profile = () => {
           </Col>
 
           <Col className="item-container-profile" lg="7">
-          
+
             {userInfo.items ?
               userInfo.items.map(item => {
                 const { _id, title, swapValue, image } = item
@@ -93,22 +95,29 @@ const Profile = () => {
             <p>Click an item card to view your listing and make edits.</p>
             <Button onClick={postNewItem}>List new item</Button>
 
-            {userInfo.items.messages ? 
-              userInfo.items.messages.map(message => {
 
-                return (
-                  <div key={message}>
-                    <p>{userInfo.items.messages.text}</p>
-                    <p>Posted by {userInfo.items.messages.populate('owner').username}</p>
-                  </div>
-                )
+            <div>{userInfo.items.forEach(item => {
+              console.log('Item Message', item.messages)
+              const itemMessages = item.messages
+              console.log('constMessages', itemMessages)
+              itemMessages.map(message => {
+                console.log('logged message', message.text)
+                console.log('item url', message.itemToSwap)
+                if (message.text) {
+                  return (
+                    <div key={Math.random()}>
+                      <p>{message.text}</p>
+                      <p>{message.itemToSwap}</p>
+                    </div>
+                  )
+                } else {
+                  return (<> <p>You have no messages</p></>)
+                }
               })
-              :
-              <>
-                <h4>You currently have no messages.</h4>
-              </>
             }
-
+            )
+            }
+            </div>
           </Col>
 
         </Row>}
