@@ -75,7 +75,6 @@ const ItemEdit = () => {
   return (
     <main className='form-page'>
       <ItemForm 
-        title="Edit Item"
         formFields={formFields}
         setFormFields={setFormFields}
         error={error}
