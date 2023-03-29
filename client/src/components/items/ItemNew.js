@@ -34,8 +34,8 @@ const ItemNew = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const { data } = await authenticated.post('items', formFields)
-      navigate(`/item/${data._id}`)
+      const { data } = await authenticated.post('/api/items', formFields)
+      navigate(`/items/${data._id}`)
     } catch (err) {
       console.log(err)
       setError(err.response.data.message)

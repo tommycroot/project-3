@@ -4,6 +4,7 @@ import { Link, useNavigate, useLocation } from 'react-router-dom'
 
 import { authenticated, getPayload, getToken, isAuthenticated, userIsOwner } from './helpers/auth'
 
+import { Button } from 'react-bootstrap'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -40,6 +41,10 @@ const Profile = () => {
   }, [])
 
   const [error, setError] = useState('')
+
+  const postNewItem = () => {
+    navigate('/items/new')
+  }
 
   return (
     <Container>
@@ -86,6 +91,7 @@ const Profile = () => {
             <h2>Location: {userInfo.location}</h2>
             <h3>Your average rating: {userInfo.averageRating}</h3>
             <p>Click an item card to view your listing and make edits.</p>
+            <Button onClick={postNewItem}>List new item</Button>
 
             {userInfo.items.messages ? 
               userInfo.items.messages.map(message => {
