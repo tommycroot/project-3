@@ -14,6 +14,8 @@ import Spinner from './Spinner.js'
 import Error from './Error.js'
 import NavBar from './NavBar'
 
+
+
 const Profile = () => {
 
   const navigate = useNavigate()
@@ -45,6 +47,7 @@ const Profile = () => {
   const postNewItem = () => {
     navigate('/items/new')
   }
+
 
 
 
@@ -104,12 +107,25 @@ const Profile = () => {
                 return itemMessages.map((message, index) => {
                   console.log('logged message', message.text)
                   console.log('item url', message.itemToSwap)
+                  const idB = message.itemToSwap.split('/')
+                  const swapURL = idB[idB.length - 1]
+                  console.log('idb', idB)
                   if (message.text) {
                     return (
                       <div key={`${item.id}-${index}`}>
                         <p>{item.title}</p>
                         <p>{message.text}</p>
-                        <p>{message.itemToSwap}</p>
+                        <Link to={message.itemToSwap}>Click here to see my Item! </Link>
+                        <Button onClick={async () => {
+                          try {
+                            await authenticated.put(`api/trade/${item._id}/${swapURL}`)
+                            await authenticated.delete(`api/items/${item._id}/messages`)
+                            await authenticated.get('/api/profile')
+                            navigate('/profile')
+                          } catch (err) {
+                            console.log(err)
+                          }
+                        }}>Accept Swap</Button>
                       </div>
                     )
                   } else {

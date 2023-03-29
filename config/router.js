@@ -31,7 +31,7 @@ router.route('/users/:userId/ratings/:ratingId')
 router.route('/items/:itemId/messages')
   .post(secureRoute, addMessage)
 
-router.route('/items/:itemId/messages/:messageId')
+router.route('/items/:itemId/messages')
   .delete(secureRoute, deleteMessage)
 
 router.route('/profile')
