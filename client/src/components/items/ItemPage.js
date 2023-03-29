@@ -14,6 +14,8 @@ const ItemPage = () => {
   const [item, setItem] = useState(null)
   const { id } = useParams()
 
+  console.log('TEST USER', userIsOwner(item))
+
   useEffect(() => {
     const getData = async () => {
       const { data } = await axios.get(`/api/items/${id}`)

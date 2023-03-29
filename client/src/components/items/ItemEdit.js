@@ -26,31 +26,28 @@ const ItemEdit = () => {
   })
   const [ error, setError ] = useState('')
 
-  
+  const [ item, setItem ] = useState(null)
 
   // ! On Mount
+
   useEffect(() => {
-
-    // if (!isAuthenticated || !userIsOwner) {
-    //   navigate(`/items/${itemId}`)
-    // }
-
-    //((!isAuthenticated() || !userIsOwner()) && navigate(`/items/${itemId}`))
 
     const getItem = async () => {
       try {
         const { data } = await authenticated.get(`/api/items/${itemId}`)
-        console.log('AUTHENTICATED')
-        console.log('ITEM DATA', data)
+        //console.log('AUTHENTICATED')
+        //console.log('ITEM DATA', data)
         setFormFields(data)
       } catch (err) {
         console.log(err)
       }
     }
     getItem()
+
+    console.log('is User is owner working', userIsOwner(item))
     
 
-  }, [itemId, navigate])
+  }, [item])
 
   // ! Execution
   const handleSubmit = async (e) => {
