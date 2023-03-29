@@ -14,6 +14,8 @@ const ItemPage = () => {
   const [item, setItem] = useState(null)
   const { id } = useParams()
 
+  const navigate = useNavigate()
+
   console.log('TEST USER', userIsOwner(item))
 
   useEffect(() => {
@@ -35,6 +37,7 @@ const ItemPage = () => {
     try {
       console.log('deleted')
       await authenticated.delete(`/api/items/${id}`)
+      navigate('/profile')
     } catch (err) {
       console.log(err)
     }
@@ -61,7 +64,7 @@ const ItemPage = () => {
             </div>
             <Button className='swapNow'>Swap Now</Button>
             {userIsOwner(item) && <div><Link to={`/items/${id}/edit`}className='editItem'>Edit Item</Link></div> }
-            {userIsOwner(item) && <div><Link to={'/profile'} className='deleteItem' onClick={handleDelete}>Delete Item</Link></div> }
+            {userIsOwner(item) && <div><Link className='deleteItem' onClick={handleDelete}>Delete Item</Link></div> }
           </Col>
           <Row className='description'>
             <Col>

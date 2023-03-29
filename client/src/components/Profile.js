@@ -15,6 +15,8 @@ import NavBar from './NavBar'
 
 const Profile = () => {
 
+  const navigate = useNavigate()
+
   console.log('PROFILE PAGE')
 
   const [userInfo, setUserInfo] = useState(null)
