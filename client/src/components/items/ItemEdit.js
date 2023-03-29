@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react'
+import React,{ useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 
 // Custom functions
-import { authenticated, isAuthenticated, userIsOwner } from '../helpers/auth'
+import { authenticated, isAuthenticated, userIsOwner } from '../helpers/auth.js'
 
 // Custom Components
 import ItemForm from './ItemForm'
@@ -13,6 +13,7 @@ const ItemEdit = () => {
   // ! Location variables
   const navigate = useNavigate()
   const { itemId } = useParams()
+  const [ item, setItem ] = useState(null)
 
   // ! State
   const [ formFields, setFormFields ] = useState({
@@ -26,28 +27,37 @@ const ItemEdit = () => {
   })
   const [ error, setError ] = useState('')
 
-  const [ item, setItem ] = useState(null)
+  useEffect(() => {
+    const getItemInfo = async () => {
+      const { data } = await axios.get(`/api/items/${itemId}`)
+      console.log('ITEM DATA', data)
+      setItem(data)
+    }
+    getItemInfo()
+  }, [itemId])
+  
 
   // ! On Mount
 
   useEffect(() => {
+  
 
     const getItem = async () => {
       try {
         const { data } = await authenticated.get(`/api/items/${itemId}`)
-        //console.log('AUTHENTICATED')
-        //console.log('ITEM DATA', data)
+        if (!isAuthenticated() || !userIsOwner(data)) navigate(`/items/${itemId}`)
+        console.log('Not Authenticated', !isAuthenticated())
+        console.log('Not Owner', !userIsOwner(data))
+        console.log('Item', data)
         setFormFields(data)
       } catch (err) {
         console.log(err)
       }
     }
     getItem()
-
-    console.log('is User is owner working', userIsOwner(item))
     
 
-  }, [item])
+  }, [itemId])
 
   // ! Execution
   const handleSubmit = async (e) => {
