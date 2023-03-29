@@ -51,7 +51,7 @@ const Home = () => {
                       <div style={{ backgroundImage: `url('${image}')` }} className="thumbnail"></div>
                       <Card.Body>
                         <Card.Title>{title}</Card.Title>
-                        <Card.Subtitle>£{swapValue}</Card.Subtitle>
+                        <Card.Subtitle>Swap value: £{swapValue}</Card.Subtitle>
                         <Card.Text>
                           <p>{owner.username}<br></br>{owner.location}</p>
                         </Card.Text>
