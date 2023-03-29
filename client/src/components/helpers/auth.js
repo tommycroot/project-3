@@ -45,6 +45,6 @@ export const userIsOwner = (item) => {
   const payload = getPayload()
   if (!payload) return
   if (item && item.owner) {
-    return payload.sub === item.owner._id
+    return payload.sub === item.owner.id
   }
 }
