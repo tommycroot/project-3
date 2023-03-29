@@ -90,3 +90,13 @@ a {
     left: 0;
   }
 }
+
+.item-container-profile{
+  display: flex;
+  flex-wrap: wrap;
+
+  .item-card-profile {
+    margin-right: 30px;
+    margin-bottom: 30px;
+  }
+}
