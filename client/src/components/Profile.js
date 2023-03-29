@@ -47,7 +47,7 @@ const Profile = () => {
   }
 
 
-  
+
   return (
     <Container>
       {userInfo &&
@@ -96,24 +96,26 @@ const Profile = () => {
             <Button onClick={postNewItem}>List new item</Button>
 
 
-            <div>{userInfo.items.forEach(item => {
+            <div>{userInfo.items.map(item => {
               console.log('Item Message', item.messages)
               const itemMessages = item.messages
               console.log('constMessages', itemMessages)
-              itemMessages.map(message => {
-                console.log('logged message', message.text)
-                console.log('item url', message.itemToSwap)
-                if (message.text) {
-                  return (
-                    <div key={Math.random()}>
-                      <p>{message.text}</p>
-                      <p>{message.itemToSwap}</p>
-                    </div>
-                  )
-                } else {
-                  return (<> <p>You have no messages</p></>)
-                }
-              })
+              if (itemMessages.length > 0)
+                return itemMessages.map((message, index) => {
+                  console.log('logged message', message.text)
+                  console.log('item url', message.itemToSwap)
+                  if (message.text) {
+                    return (
+                      <div key={`${item.id}-${index}`}>
+                        <p>{item.title}</p>
+                        <p>{message.text}</p>
+                        <p>{message.itemToSwap}</p>
+                      </div>
+                    )
+                  } else {
+                    return (<> <p>You have no messages</p></>)
+                  }
+                })
             }
             )
             }
