@@ -20,14 +20,13 @@ const Profile = () => {
   const [userInfo, setUserInfo] = useState(null)
 
   useEffect(() => {
-    
-    
+
+
     const getInfo = async () => {
       try {
         console.log('USER INFO', userInfo)
         console.log('PAYLOAD', getPayload())
         const { data } = await authenticated.get('/api/profile')
-        //const response = await axios.get('/api/profile')
         console.log('response', data)
         setUserInfo(data)
       } catch (err) {
@@ -38,28 +37,25 @@ const Profile = () => {
     getInfo()
   }, [])
 
-  
   const [error, setError] = useState('')
-
-  //const { username, location, averageRating, items } = userInfo
 
   return (
     <Container>
-      {userInfo && 
-      <Row>
-        <Col xs="12">
-          <h1>Welcome back, {userInfo.username}</h1>
-        </Col>
+      {userInfo &&
+        <Row>
+          <Col xs="12">
+            <h1>Welcome back, {userInfo.username}</h1>
+            <h2>Listed items:</h2>
+          </Col>
 
-        <Col>
-          <h2>Listed items:</h2>
-          <div>
+          <Col className="item-container-profile" lg="7">
+          
             {userInfo.items ?
               userInfo.items.map(item => {
                 const { _id, title, swapValue, image } = item
 
                 return (
-                  <Col key={_id} lg="4" sm="12" className="item">
+                  <Col key={_id} lg="5" sm="12" className="item-card-profile">
                     <Link to={`/items/${_id}`}>
                       <Card>
                         <div style={{ backgroundImage: `url('${image}')` }} className="thumbnail"></div>
@@ -81,10 +77,33 @@ const Profile = () => {
                   <Spinner />}
               </>
             }
-          </div>
-        </Col>
 
-      </Row>}
+          </Col>
+
+          <Col>
+            <h2>Location: {userInfo.location}</h2>
+            <h3>Your average rating: {userInfo.averageRating}</h3>
+            <p>Click an item card to view your listing and make edits.</p>
+
+            {userInfo.items.messages ? 
+              userInfo.items.messages.map(message => {
+
+                return (
+                  <div key={message}>
+                    <p>{userInfo.items.messages.text}</p>
+                    <p>Posted by {userInfo.items.messages.populate('owner').username}</p>
+                  </div>
+                )
+              })
+              :
+              <>
+                <h4>You currently have no messages.</h4>
+              </>
+            }
+
+          </Col>
+
+        </Row>}
 
     </Container>
 

@@ -4,61 +4,61 @@ export default [
   {
     category: 'Sporting Goods',
     title: 'Vintage road bike',
-    description: 'Vintage road bike available for swap. Looks really cool but I don\'t use it anymore.', 
+    description: 'Vintage road bike available for swap. Looks really cool but I don\'t use it anymore.',
     condition: 'Good',
     swapValue: 300,
     image: 'https://cdn.shopify.com/s/files/1/0105/7312/products/U-GB-R6V53cmSomecc.1988VintageRoadBike1_2048x.jpg?v=1609434720',
-    location: 'Hackney', 
+    location: 'Hackney',
   },
 
   {
     category: 'Electronics',
     title: 'Sony PlayStation 2',
-    description: 'Old PlayStation from the mid-2000s. Comes with about 20 games and 2 controllers. Will throw in a memory card as well.', 
+    description: 'Old PlayStation from the mid-2000s. Comes with about 20 games and 2 controllers. Will throw in a memory card as well.',
     condition: 'Good',
     swapValue: 200,
     image: 'https://imagedelivery.net/ePR8PyKf84wPHx7_RYmEag/252ddfa0-5058-454c-118a-ea105f31db00/86',
-    location: 'Leicester', 
+    location: 'Leicester',
   },
 
   {
     category: 'Collectables & Antiques',
     title: '100 shiny Pokemon cards',
-    description: 'Mint condition collection of shiny Pokemon cards. Will swap entire collection for one shiny Charizard.', 
+    description: 'Mint condition collection of shiny Pokemon cards. Will swap entire collection for one shiny Charizard.',
     condition: 'Excellent',
     swapValue: 10000,
     image: 'https://i.ebayimg.com/images/g/kk4AAOSwge9gIpJq/s-l1600.jpg',
-    location: 'Richmond', 
+    location: 'Richmond',
   },
 
   {
     category: 'Fashion',
     title: 'Doc Marten Chelsea Boots',
-    description: 'Comfortable boots that are great in all weather conditions', 
+    description: 'Comfortable boots that are great in all weather conditions',
     condition: 'Good',
     swapValue: 50,
     image: 'https://cdn.media.amplience.net/i/office/4557003508_md1.jpg?$newhighres$&fmt=auto&qlt=default&fmt.jpeg.interlaced=true',
-    location: 'Bermondsey', 
+    location: 'Bermondsey',
   },
 
   {
     category: 'Motors',
     title: 'Ford Fiesta',
-    description: '2000 Ford Fiesta 1.0-litre. Decent running order, MOT valid until September 2023', 
+    description: '2000 Ford Fiesta 1.0-litre. Decent running order, MOT valid until September 2023',
     condition: 'Good',
     swapValue: 800,
     image: 'https://live.staticflickr.com/65535/51838242492_c538556570_b.jpg',
-    location: 'Portsmouth', 
+    location: 'Portsmouth',
   },
 
   {
     category: 'Jewellery & Watches',
     title: 'Rolex Explorer II',
-    description: 'Good condition Rolex Explorer II', 
+    description: 'Good condition Rolex Explorer II',
     condition: 'Good',
     swapValue: 9000,
     image: 'https://hodinkee.imgix.net/uploads/images/9b338244-de3e-4213-816d-16881a497734/WristPolar.jpg?ixlib=rails-1.1.0&fm=jpg&q=55&auto=format&usm=12&fit=crop&ch=Width%2CDPR%2CSave-Data&alt=&w=820',
-    location: 'Essex', 
+    location: 'Essex',
   },
 
   {
@@ -158,6 +158,137 @@ export default [
     condition: 'Used, but like new.',
     swapValue: 300,
     image: 'https://imagedelivery.net/ePR8PyKf84wPHx7_RYmEag/b617cc00-72b3-4c7a-02c6-163b0f55a900/86',
-  }
+  },
+
+  {
+    title: 'Pepsi Clear (Limited Edition)',
+    category: 'Food & Beverage',
+    description: 'A 1993 Rare and collectible Pepsi Clear, unopened and in mint condition. Was originally on sale in USA and Canada.',
+    location: 'Bristol',
+    condition: 'New',
+    swapValue: 50,
+    image: 'https://static.independent.co.uk/2022/01/05/09/shutterstock_721834738.jpg?quality=75&width=990&crop=3264%3A2448%2Csmart&auto=webp',
+  },
+
+  {
+    title: 'Pogo Stick',
+    category: 'Toys & Games',
+    description: 'Vintage powered stick for kids and adults, lightly used.',
+    location: 'Birmingham',
+    condition: 'Used, in good condition.',
+    swapValue: 30,
+    image: 'https://www.spaco.org/MachineShop/HopRodsMyTwoOfThemSm.jpg'
+  },
+
+  {
+    title: 'Scalextric Slot Car Racing Set',
+    category: 'Toys & Games',
+    description: 'Complete Scalextric slot car racing set, includes two cars and track.',
+    location: 'Liverpool',
+    condition: 'Used, in excellent condition.',
+    swapValue: 80,
+    image: 'https://i.ebayimg.com/images/g/4pEAAOSwwuljTBdt/s-l400.jpg',
+  },
+
+  {
+    title: 'Quadcopter Drone',
+    category: 'Electronics',
+    description: 'Remote-controlled quadcopter drone with camera, like new condition.',
+    location: 'Leeds',
+    condition: 'Used, in great condition.',
+    swapValue: 150,
+    image: 'https://content.instructables.com/FG0/PYKZ/JH0TKUOG/FG0PYKZJH0TKUOG.jpg?auto=webp&frame=1&width=525&height=1024&fit=bounds&md=0b10b6111259853750e1125a8004dab4-amazon./images/I/81hZdb0vLmL._AC_SS450_.jpg',
+  },
+
+  {
+    title: 'Drinking Hat',
+    category: 'Clothing & Accessories',
+    description: 'Fun and practical hat with built-in straws for drinking, new and unused.',
+    location: 'Newcastle',
+    condition: 'New',
+    swapValue: 20,
+    image: 'https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/61iC+dG0A+L._AC_UX385_.jpg/1/0279/4811/9401/products/51knE8yTtQL._AC_SL1000_1024x1024.jpg?v=1601658374',
+  },
+
+    {
+    title: 'Folding Camping Chair',
+    category: 'Sporting Goods',
+    description: 'Lightweight and portable camping chair with cup holder, used only once.',
+    location: 'Cardiff',
+    condition: 'Like new',
+    swapValue: 25,
+    image: 'https://assets.fatllama.com/images/large/camping-chair-folding-x-3-22446005.HEIC',
+  },
+
+  {
+    title: 'Wireless Bluetooth Headphones',
+    category: 'Electronics',
+    description: 'Over-ear wireless headphones with noise cancellation and long battery life, like new condition.',
+    location: 'Southampton',
+    condition: 'Used, in excellent condition',
+    swapValue: 80,
+    image: 'https://imagedelivery.net/ePR8PyKf84wPHx7_RYmEag/e90e81d7-8b81-43c0-63f6-8b656d6b2c00/86',
+  },
+
+  {
+    title: 'Vintage Typewriter',
+    category: 'Collectibles & Antiques',
+    description: 'Beautiful vintage typewriter in good working condition.',
+    location: 'Manchester',
+    condition: 'Used, in good condition',
+    swapValue: 150,
+    image: 'https://i.ebayimg.com/images/g/ogYAAOSwuR5hBw~t/s-l400.jpg',
+  },
+
+  {
+    title: 'Electric Pressure Cooker',
+    category: 'Home & Garden',
+    description: 'Multifunctional electric pressure cooker, used only a few times.',
+    location: 'London',
+    condition: 'Used, in great condition',
+    swapValue: 50,
+    image: 'https://imagedelivery.net/ePR8PyKf84wPHx7_RYmEag/dbf7aeba-b4ba-4ba3-0610-9770cbbdfc00/86',
+  },
+
+  {
+    title: 'Antique Pocket Watch',
+    category: 'Collectibles & Antiques',
+    description: 'Rare antique pocket watch from the early 1900s, in good condition.',
+    location: 'Birmingham',
+    condition: 'Used, in good condition',
+    swapValue: 300,
+    image: 'https://i.ebayimg.com/images/g/fuwAAOSworxex6wy/s-l500.jpg',
+  },
+
+  {
+    title: 'Wireless Keyboard and Mouse',
+    category: 'Electronics',
+    description: 'Wireless keyboard and mouse combo, in like new condition.',
+    location: 'Glasgow',
+    condition: 'Like new',
+    swapValue: 30,
+    image: 'https://imagedelivery.net/ePR8PyKf84wPHx7_RYmEag/b3819683-9570-4d30-df02-6ac88c1b9400/86',
+  },
+
+  {
+    title: 'Leather Wallet',
+    category: 'Clothing & Accessories',
+    description: 'High-quality leather wallet with RFID blocking, like new condition.',
+    location: 'Edinburgh',
+    condition: 'Like new',
+    swapValue: 40,
+    image: 'https://i.ebayimg.com/images/g/bpwAAOSwwPRgroFD/s-l500.jpg',
+  },
+
+  {
+    title: 'Bluetooth Smart Scale',
+    category: 'Health & Wellness',
+    description: 'Smart scale that measures weight, body fat, and other health metrics, in like new condition.',
+    location: 'Leeds',
+    condition: 'Like new',
+    swapValue: 60,
+    image: 'https://i.ebayimg.com/images/g/cSUAAOSwUH5j2FTo/s-l500.jpg',
+  },
+
 
 ]
