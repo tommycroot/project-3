@@ -177,7 +177,7 @@ export default [
     location: 'Birmingham',
     condition: 'Used, in good condition.',
     swapValue: 30,
-    image: 'https://www.spaco.org/MachineShop/HopRodsMyTwoOfThemSm.jpg'
+    image: 'https://www.spaco.org/MachineShop/HopRodsMyTwoOfThemSm.jpg',
   },
 
   {
@@ -210,7 +210,7 @@ export default [
     image: 'https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/61iC+dG0A+L._AC_UX385_.jpg/1/0279/4811/9401/products/51knE8yTtQL._AC_SL1000_1024x1024.jpg?v=1601658374',
   },
 
-    {
+  {
     title: 'Folding Camping Chair',
     category: 'Sporting Goods',
     description: 'Lightweight and portable camping chair with cup holder, used only once.',
@@ -289,6 +289,88 @@ export default [
     swapValue: 60,
     image: 'https://i.ebayimg.com/images/g/cSUAAOSwUH5j2FTo/s-l500.jpg',
   },
+
+  {
+    title: 'Sony PlayStation 5 Console',
+    category: 'Electronics',
+    description: 'Brand new Sony PlayStation 5 console, with controller and cables.',
+    location: 'London',
+    condition: 'Brand New',
+    swapValue: 600,
+    image: 'https://techcrunch.com/wp-content/uploads/2020/11/PS5-header.jpg',
+  },
+  {
+    title: 'Vintage Coca-Cola Sign',
+    category: 'Collectables & Antiques',
+    description: 'Vintage Coca-Cola sign in great condition. Measures 24" x 18".',
+    location: 'Manchester',
+    condition: 'Used, but in good condition',
+    swapValue: 200,
+    image: 'https://autohistorysigns.co.uk/wp-content/uploads/2020/11/IMG_8276-scaled.jpg',
+  },
+  {
+    title: 'Burberry Trench Coat',
+    category: 'Fashion',
+    description: 'Genuine Burberry trench coat in excellent condition. Size M.',
+    location: 'Edinburgh',
+    condition: 'Like New',
+    swapValue: 500,
+    image: 'https://i.ebayimg.com/images/g/fZoAAOSwUlFhQLiw/s-l1600.jpg',
+  },
+  {
+    title: 'Audi A3 S-Line',
+    category: 'Motors',
+    description: '2017 Audi A3 S-Line in great condition. Full service history.',
+    location: 'Birmingham',
+    condition: 'Used, but in good condition',
+    swapValue: 15000,
+    image: 'https://f7432d8eadcf865aa9d9-9c672a3a4ecaaacdf2fee3b3e6fd2716.ssl.cf3.rackcdn.com/C2520/U1883/IMG_5695-large.jpg',
+  },
+  {
+    title: 'Diamond Tennis Bracelet',
+    category: 'Jewellery & Watches',
+    description: '18k white gold diamond tennis bracelet. 5ct total weight.',
+    location: 'Liverpool',
+    condition: 'Brand New',
+    swapValue: 10000,
+    image: 'https://bnsec.bluenile.com/bluenile/is/image/bluenile/-jewelry/bracelets/diamond-tennis-bracelet-14kt-white-gold-/58155_main?$phab_detailmain$',
+  },
+  {
+    title: 'Leather Chesterfield Sofa',
+    category: 'Home & Garden',
+    description: 'Vintage leather chesterfield sofa in excellent condition.',
+    location: 'Leeds',
+    condition: 'Used, but in good condition',
+    swapValue: 800,
+    image: 'https://cdn.shopify.com/s/files/1/0264/6268/3215/products/media_images_org_file0036303.jpg?v=1607365013',
+  },
+  {
+    title: 'Cannondale Synapse Carbon Disc 105',
+    category: 'Sporting Goods',
+    description: 'Cannondale Synapse Carbon Disc 105 road bike, size 56cm.',
+    location: 'London',
+    condition: 'Like New',
+    swapValue: 2000,
+    image: 'https://i.ebayimg.com/images/g/73QAAOSwVRdjkQbs/s-l1600.jpg',
+  },
+  {
+    title: 'Lego Star Wars Millennium Falcon',
+    category: 'Toys & games',
+    description: 'Lego Star Wars Millennium Falcon set, with all pieces and instructions.',
+    location: 'Bristol',
+    condition: 'Brand New, unopened',
+    swapValue: 500,
+    image: 'https://i.ebayimg.com/images/g/hIcAAOSw1qhj861Y/s-l1600.jpg',
+  },
+  {
+    title: 'Apple iPhone 13 Pro Max',
+    category: 'Electronics',
+    description: 'Brand new Apple iPhone 13 Pro Max, 256GB, in Graphite.',
+    location: 'Glasgow',
+    condition: 'Brand New',
+    swapValue: 1300,
+    image: 'https://i.ebayimg.com/images/g/09UAAOSwL1tj1Uhz/s-l1600.jpg',
+  }
 
 
 ]
