@@ -46,6 +46,8 @@ const Profile = () => {
     navigate('/items/new')
   }
 
+
+  
   return (
     <Container>
       {userInfo &&
