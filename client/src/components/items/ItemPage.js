@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 import Container from 'react-bootstrap/Container'
@@ -7,7 +7,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { Button } from 'react-bootstrap'
 
-import { userIsOwner } from '../helpers/auth.js'
+import { userIsOwner, authenticated } from '../helpers/auth.js'
 
 const ItemPage = () => {
   console.log('itempage')
@@ -31,6 +31,15 @@ const ItemPage = () => {
 
   const { title, image, description, swapValue, condition, location } = item
 
+  const handleDelete = async () => {
+    try {
+      console.log('deleted')
+      await authenticated.delete(`/api/items/${id}`)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
   return (
     <>
       <Container>
@@ -51,7 +60,8 @@ const ItemPage = () => {
               <p>Approximate Value: £{swapValue}</p>
             </div>
             <Button className='swapNow'>Swap Now</Button>
-            {userIsOwner(item) && <div><Button className='editItem'>Edit Item</Button></div> }
+            {userIsOwner(item) && <div><Link to={`/items/${id}/edit`}className='editItem'>Edit Item</Link></div> }
+            {userIsOwner(item) && <div><Link to={'/profile'} className='deleteItem' onClick={handleDelete}>Delete Item</Link></div> }
           </Col>
           <Row className='description'>
             <Col>

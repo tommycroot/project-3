@@ -17,7 +17,7 @@ const ItemForm = ({ title, formFields, setFormFields, error, setError, handleSub
           <h1 className='display-6 text-center'>{title}</h1>
           {/* Name */}
           <label htmlFor="title">Title</label>
-          <input type="text" name="title" placeholder='Title' value={formFields.titke} onChange={handleChange} />
+          <input type="text" name="title" placeholder='Title' value={formFields.title} onChange={handleChange} />
           {/* Origin */}
           <label htmlFor="category">Category</label>
           <input type="text" name="category" placeholder='Category' value={formFields.category} onChange={handleChange} />
