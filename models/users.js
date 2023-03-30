@@ -13,6 +13,7 @@ const sellerRatingsSchema = new mongoose.Schema({
 const userSchema = new mongoose.Schema({
   username: { type: String, required: true, unique: true, maxlength: 25 },
   location: { type: String, required: true, maxlength: 30 },
+  borough: { type: String, required: true, maxlength: 30 },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   ratings: [sellerRatingsSchema],
@@ -32,7 +33,7 @@ userSchema.virtual('averageRating')
     return parseFloat((sum / this.ratings.length).toFixed(2))
   })
 
-  
+
 userSchema.virtual('items', {
   ref: 'Item',
   localField: '_id',

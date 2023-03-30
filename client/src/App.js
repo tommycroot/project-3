@@ -14,6 +14,7 @@ import Profile from './components/Profile'
 import NavBar from './components/NavBar'
 import { getToken } from './components/helpers/auth'
 import MessageForm from './components/messages/MessageForm'
+import DealOfDay from './components/DealOfDay' 
 
 const App = () => {
 
@@ -32,6 +33,7 @@ const App = () => {
           <Route path="/items/:itemId/edit" element={<ItemEdit />} /> 
           <Route path="/profile" element={<Profile />} />
           <Route path="/sendmessage" element={<MessageForm />} /> 
+          <Route path="/dealofday" element={<DealOfDay />} /> 
         </Routes>
       </BrowserRouter>
     </div>

@@ -3,7 +3,8 @@ export default [
 
   {
     username: 'Dave',
-    location: 'Hackney',
+    location: 'London',
+    borough: 'Hackney',
     email: 'dave@email.com',
     password: 'pass',
     passwordConfirmation: 'pass',
@@ -12,6 +13,7 @@ export default [
   {
     username: 'Sharon',
     location: 'Leicester',
+    borough: 'City Centre',
     email: 'sharon@email.com',
     password: 'pass',
     passwordConfirmation: 'pass',
@@ -20,6 +22,7 @@ export default [
   {
     username: 'Gary',
     location: 'Richmond',
+    borough: 'Richmond upon Thames',
     email: 'gary@email.com',
     password: 'pass',
     passwordConfirmation: 'pass',
@@ -27,7 +30,8 @@ export default [
 
   {
     username: 'Charlotte',
-    location: 'Bermondsey',
+    location: 'London',
+    borough: 'Camden',
     email: 'charlotte@email.com',
     password: 'pass',
     passwordConfirmation: 'pass',
@@ -36,6 +40,7 @@ export default [
   {
     username: 'Emma',
     location: 'Porstmouth',
+    borough: 'Southsea',
     email: 'emma@email.com',
     password: 'pass',
     passwordConfirmation: 'pass',
@@ -44,10 +49,21 @@ export default [
   {
     username: 'Tommy',
     location: 'Essex',
+    borough: 'Basildon',
     email: 'tommy@email.com',
     password: 'pass',
     passwordConfirmation: 'pass',
+  },
+
+  {
+    username: 'Rick James',
+    location: 'London',
+    borough: 'Shoreditch',
+    email: 'RickJames@email.com',
+    password: 'pass',
+    passwordConfirmation: 'pass',
   }
+
 
 
 ]
