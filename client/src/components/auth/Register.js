@@ -17,6 +17,7 @@ const Register = () => {
   const [ formFields, setFormFields ] = useState({
     username: '',
     location: '',
+    borough: '',
     email: '',
     password: '',
     passwordConfirmation: '',
@@ -55,8 +56,11 @@ const Register = () => {
             <label htmlFor="username">Username</label>
             <input type="text" name="username" placeholder='Username' onChange={handleChange} value={formFields.username} />
             {/* Location */}
-            <label htmlFor="username">Location</label>
+            <label htmlFor="location">Location</label>
             <input type="text" name="location" placeholder='Location' onChange={handleChange} value={formFields.location} />
+            {/* Borough */}
+            <label htmlFor="borough">Borough</label>
+            <input type="text" name="borough" placeholder='Borough' onChange={handleChange} value={formFields.borough} />
             {/* Email */}
             <label htmlFor="email">Email</label>
             <input type="email" name="email" placeholder='Email' onChange={handleChange} value={formFields.email} />

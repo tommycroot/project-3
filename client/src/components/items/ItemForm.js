@@ -24,9 +24,6 @@ const ItemForm = ({ title, formFields, setFormFields, error, setError, handleSub
           {/* Description */}
           <label htmlFor="description">Description</label>
           <textarea name="description" placeholder='Description' value={formFields.description} onChange={handleChange}></textarea>
-          {/* Location */}
-          <label htmlFor="location">Location</label>
-          <textarea name="location" placeholder='Location' value={formFields.location} onChange={handleChange}></textarea>
           {/* Condition */}
           <label htmlFor="condition">Condition</label>
           <textarea name="condition" placeholder='Condition' value={formFields.condition} onChange={handleChange}></textarea>

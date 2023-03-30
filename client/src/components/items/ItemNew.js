@@ -17,7 +17,6 @@ const ItemNew = () => {
     title: '',
     category: '',
     description: '',
-    location: '',
     condition: '',
     swapValue: '',
     image: '',

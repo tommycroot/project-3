@@ -335,7 +335,7 @@ export default [
     description: 'Lego Star Wars Millennium Falcon set, with all pieces and instructions.',
     condition: 'Brand New, unopened',
     swapValue: 500,
-    image: 'https://i.ebayimg.com/images/g/hIcAAOSw1qhj861Y/s-l1600.jpg'
+    image: 'https://i.ebayimg.com/images/g/hIcAAOSw1qhj861Y/s-l1600.jpg',
   },
   {
     title: 'Apple iPhone 13 Pro Max',
@@ -436,7 +436,7 @@ export default [
     description: 'A rare signed Muhammad Ali boxing glove with a certificate of authenticity.',
     condition: 'Used - excellent condition',
     swapValue: 800,
-    image: 'https://sothebys-md.brightspotcdn.com/dims4/default/2d06ad3/2147483647/strip/true/crop/2000x1546+0+0/resize/2048x1583!/quality/90/?url=http%3A%2F%2Fsothebys-brightspot.s3.amazonaws.com%2Fmedia-desk%2F5b%2F5a%2F0dd1fd724cbeb1f179dd37aeb6f2%2F006n10571-bqbjv.jpgg',
+    image: 'https://dyn1.heritagestatic.com/lf?set=path%5B2%2F0%2F6%2F9%2F6%2F20696826%5D&call=url%5Bfile%3Aproduct.chain%5D',
   },
 
   {
