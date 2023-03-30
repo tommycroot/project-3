@@ -42,7 +42,7 @@ const Home = () => {
 
           {items.length > 0 ?
             items.map(item => {
-              const { _id, title, swapValue, image, owner } = item
+              const { _id, title, swapValue, image, owner, borough } = item
 
               return (
                 <Col key={_id} lg="4" sm="12" className="item">
@@ -53,7 +53,7 @@ const Home = () => {
                         <Card.Title>{title}</Card.Title>
                         <Card.Subtitle>Swap value: £{swapValue}</Card.Subtitle>
                         <Card.Text>
-                          <p>{owner.username}<br></br>{owner.location}</p>
+                          <p>{owner.username}<br></br>{owner.location}, {owner.borough}</p>
                         </Card.Text>
                       </Card.Body>
                     </Card>

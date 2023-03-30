@@ -6,6 +6,8 @@ import Container from 'react-bootstrap/Container'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
 import { isAuthenticated, removeToken } from './helpers/auth'
+import DealOfDay from '../components/DealOfDay'
+
 
 
 
@@ -13,7 +15,7 @@ const NavBar = () => {
 
   const navigate = useNavigate()
   const location = useLocation()
-  
+
 
   const handleLogOut = () => {
     removeToken()
@@ -26,6 +28,10 @@ const NavBar = () => {
       <Nav.Item>
         <Nav.Link to="/" as={Link} className={location.pathname === '/' ? 'active' : ''}>Home</Nav.Link>
       </Nav.Item>
+      <Nav.Item>
+        <Nav.Link to="/dealofday" as={Link} className={location.pathname === '/dealofday' ? 'active' : ''}>Deal of the Day</Nav.Link>
+      </Nav.Item>
+
       {isAuthenticated() ?
         <>
           <Nav.Item>
