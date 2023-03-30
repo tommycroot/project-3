@@ -22,12 +22,17 @@ const MessageForm = ({ id }) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      await authenticated.post(`/api/items/${id}/messages`, formFields)
-      window.alert('Your swap request has been submitted.')
-      setFormFields({
-        text: '',
-        itemToSwap: '',
-      })
+      const response = confirm('Are you sure?')
+      if (response) {
+        window.alert('Your swap request has been submitted.')
+        await authenticated.post(`/api/items/${id}/messages`, formFields)
+        setFormFields({
+          text: '',
+          itemToSwap: '',
+        })
+      } else {
+        alert('Your swap request has been cancelled.')
+      }
     } catch (err) {
       console.log(err)  
     }
@@ -43,7 +48,7 @@ const MessageForm = ({ id }) => {
     <main className='form-page'>
       <Container>
         <Row>
-          <Col as="form" xs={{ span: 10, offset: 1 }} sm={{ span: 8, offset: 2 }} md={{ span: 6, offset: 3 }} onSubmit={handleSubmit}>
+          <Col as="form" md={6} onSubmit={handleSubmit}>
             <h1 className='display-6 text-center'></h1>
             {/*message */}
             <label htmlFor="text">Message</label>
@@ -51,7 +56,9 @@ const MessageForm = ({ id }) => {
             <br></br>
             <label htmlFor="itemToSwap">Item To Swap Url</label>
             <textarea name="itemToSwap" placeholder='Insert Item Url to be swapped' value={formFields.itemToSwap} onChange={handleChange} ></textarea>
-            <button className="submitbtn">Submit</button>
+            <div className="btnCenter">
+              <button className="submitbtn">Submit</button>
+            </div>
           </Col>
         </Row>
       </Container>
