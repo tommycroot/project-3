@@ -21,6 +21,7 @@ const Profile = () => {
   const navigate = useNavigate()
   const [notification, setNotification] = useState('')
   console.log('PROFILE PAGE')
+  let messagesExist = false
 
   const [userInfo, setUserInfo] = useState(null)
 
@@ -99,45 +100,48 @@ const Profile = () => {
             <Button onClick={postNewItem}>List new item</Button>
 
 
-            <div>{userInfo.items.map(item => {
-              console.log('Item Message', item.messages)
-              const itemMessages = item.messages
-              console.log('constMessages', itemMessages)
-              if (itemMessages.length > 0)
-                return itemMessages.map((message, index) => {
-                  console.log('logged message', message.text)
-                  console.log('item url', message.itemToSwap)
-                  const idB = message.itemToSwap.split('/')
-                  const swapURL = idB[idB.length - 1]
-                  console.log('idb', idB)
-                  if (message.text) {
-                    return (
-                      <div key={`${item.id}-${index}`}>
-                        <p>{item.title}</p>
-                        <p>{message.text}</p>
-                        <Link to={message.itemToSwap}>Click here to see my Item! </Link>
-                        <Button onClick={async () => {
-                          try {
-                            await authenticated.delete(`api/items/${item._id}/messages`)
-                            await authenticated.put(`api/trade/${item._id}/${swapURL}`)
-                            
-                            location.reload()
-                            setNotification('Swap Successful!')
-                          } catch (err) {
-                            console.log(err)
-                          }
-                        }}>Accept Swap</Button>
-                        {notification ? <p>{notification}</p> : null}
-                      </div>
-                    )
-                  } else {
-                    return (<> <p>You have no messages</p></>)
-                  }
-                })
-            }
-            )
-            }
+            <div>
+              {userInfo.items.map(item => {
+                console.log('Item Message', item.messages)
+                const itemMessages = item.messages
+                console.log('constMessages', itemMessages)
+                if (itemMessages.length > 0) {
+                  messagesExist = true
+                  return itemMessages.map((message, index) => {
+                    console.log('logged message', message.text)
+                    console.log('item url', message.itemToSwap)
+                    const idB = message.itemToSwap.split('/')
+                    const swapURL = idB[idB.length - 1]
+                    console.log('idb', idB)
+                    if (message.text) {
+                      return (
+                        <div key={`${item.id}-${index}`}>
+                          <p>{item.title}</p>
+                          <p>{message.text}</p>
+                          <Link to={message.itemToSwap}>Click here to see my Item! </Link>
+                          <Button onClick={async () => {
+                            try {
+                              await authenticated.delete(`api/items/${item._id}/messages`)
+                              await authenticated.put(`api/trade/${item._id}/${swapURL}`)
+                              location.reload()
+                              setNotification('Swap Successful!')
+                            } catch (err) {
+                              console.log(err)
+                            }
+                          }}>Accept Swap</Button>
+                          {notification ? <p>{notification}</p> : null}
+                        </div>
+                      )
+                    } else {
+                      return null
+                    }
+                  })
+                }
+              }
+              )}
+              {!messagesExist &&  (<> <p>You have no messages</p> </>) } 
             </div>
+
           </Col>
 
         </Row>}
