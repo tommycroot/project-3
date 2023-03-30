@@ -50,8 +50,6 @@ const Profile = () => {
   }
 
 
-
-
   return (
     <Container className="profile-container">
       {userInfo &&
@@ -105,12 +103,14 @@ const Profile = () => {
             <div className="messages-container">
               {userInfo.items.map(item => {
                 console.log('Item Message', item.messages)
+                
                 const itemMessages = item.messages
                 console.log('constMessages', itemMessages)
                 if (itemMessages.length > 0) {
                   messagesExist = true
                   return itemMessages.map((message, index) => {
                     console.log('logged message', message.text)
+                    console.log('messageID', message._id)
                     console.log('item url', message.itemToSwap)
                     const idB = message.itemToSwap.split('/')
                     const swapURL = idB[idB.length - 1]
@@ -132,7 +132,19 @@ const Profile = () => {
                             }
                           }}>Accept Swap</Button>
                           {notification ? <p>{notification}</p> : null}
+                          <Button className="list-item-btn Delete-button" onClick={async () => {
+                            try {
+                              await authenticated.delete(`api/items/${item._id}/messages/${message._id}`)
+                              //http://localhost:3000/api/items/6425b34c05da630d0cbb1ff5/messages/6425c6d64b868beb20cfbac8
+                              
+                              location.reload()
+                            } catch (err) {
+                              console.log(err.message)
+                            }
+                          }
+                          } >Delete Message</Button>
                         </div>
+
                       )
                     } else {
                       return null

@@ -34,6 +34,9 @@ router.route('/items/:itemId/messages')
 router.route('/items/:itemId/messages')
   .delete(secureRoute, deleteAllMessages)
 
+router.route('/items/:itemId/messages/:messageId')
+  .delete(secureRoute, deleteMessage)
+//http://localhost:3000/api/items/6425b34c05da630d0cbb1ff5/messages/6425c6d64b868beb20cfbac8
 router.route('/profile')
   .get(secureRoute, profileView)
 
@@ -41,6 +44,6 @@ router.route('/profile/:profileId')
   .get(secureRoute, getSingleProfile)
 
 router.route('/trade/:idA/:idB')
-  .put(secureRoute, swapItems)  
+  .put(secureRoute, swapItems)
 
 export default router

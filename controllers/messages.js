@@ -23,16 +23,11 @@ export const addMessage = async (req, res) => {
 export const deleteMessage = async (req, res) => {
   try {
     const { itemId, messageId } = req.params
-    const loggedInUserId = req.loggedInUser._id
     const item = await Item.findById(itemId)
+    console.log(item)
     if (!item) throw new NotFound('Message not found')
     const messageToDelete = item.messages.id(messageId)
     if (!messageToDelete) throw new NotFound('Message not found')
-    if (!messageToDelete.owner.equals(loggedInUserId)){
-      console.log('NOT THE OWNER')
-      throw new Unauthorized()
-    }
-
     await messageToDelete.deleteOne()
     console.log(item)
     await item.save()
