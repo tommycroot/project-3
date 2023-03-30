@@ -51,7 +51,9 @@ const Login = () => {
             <input type="email" name="email" placeholder='Email' onChange={handleChange} value={formFields.email} />
             <label htmlFor="password">Password</label>
             <input type="password" name="password" placeholder='Password' onChange={handleChange} value={formFields.password} />
-            <button className='btn btn-brown w-100 mb-4'>Login</button>
+            <div className='btnCenter'>
+              <button className='btn mb-4'>Login</button>
+            </div>
             {error && <p className='text-danger text-center'>{error}</p>}
           </Col>
         </Row>

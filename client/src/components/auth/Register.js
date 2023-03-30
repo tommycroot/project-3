@@ -71,7 +71,9 @@ const Register = () => {
             <label htmlFor="passwordConfirmation">Password Confirmation</label>
             <input type="password" name="passwordConfirmation" placeholder='Password Confirmation' onChange={handleChange} value={formFields.passwordConfirmation} />
             {/* Submit */}
-            <button className='btn btn-brown w-100 mb-4'>Register</button>
+            <div className='btnCenter'>
+              <button className='btn mb-4'>Register</button>
+            </div>
             {/* Error */}
             {error && <p className='text-danger text-center'>{error}</p>}
           </Col>
