@@ -39,7 +39,7 @@ const Home = () => {
         <Col xs="12" className="hero">
           <img src={haglLogo} className="logo" alt="hagl logo"></img>
           <div>
-            <h1 className="display-4 mb-4 text-center">Items available for swap!</h1>
+            <h1 className="display-4 mb-4 text-center">Swap your junk!</h1>
             <p className="hero-text text-center">HAGL is a free to use online marketplace where users can swap their junk items.</p>
             <p className="hero-text text-center">Sign up and try it today!</p>
           </div>
