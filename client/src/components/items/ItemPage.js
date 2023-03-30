@@ -31,7 +31,7 @@ const ItemPage = () => {
     return <p>Loading...</p>
   }
 
-  const { title, image, description, swapValue, condition, location } = item
+  const { title, image, description, swapValue, condition, location, owner } = item
 
   const handleDelete = async () => {
     try {
@@ -58,7 +58,7 @@ const ItemPage = () => {
           </Col>
           <Col md={6} className='itemInfo'>
             <div>
-              <p>Location: {location}</p>
+              <p>Location: {location} , {owner.borough}</p>
               <p>Condition: {condition}</p>
               <p>Approximate Value: £{swapValue}</p>
             </div>

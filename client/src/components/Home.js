@@ -53,7 +53,7 @@ const Home = () => {
                         <Card.Title>{title}</Card.Title>
                         <Card.Subtitle>Swap value: £{swapValue}</Card.Subtitle>
                         <Card.Text>
-                          <p>{owner.username}<br></br>{owner.location}, {borough}</p>
+                          <p>{owner.username}<br></br>{owner.location}, {owner.borough}</p>
                         </Card.Text>
                       </Card.Body>
                     </Card>
