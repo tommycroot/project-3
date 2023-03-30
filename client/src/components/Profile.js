@@ -19,7 +19,7 @@ import NavBar from './NavBar'
 const Profile = () => {
 
   const navigate = useNavigate()
-
+  const [notification, setNotification] = useState('')
   console.log('PROFILE PAGE')
 
   const [userInfo, setUserInfo] = useState(null)
@@ -120,11 +120,14 @@ const Profile = () => {
                           try {
                             await authenticated.delete(`api/items/${item._id}/messages`)
                             await authenticated.put(`api/trade/${item._id}/${swapURL}`)
+                            
                             location.reload()
+                            setNotification('Swap Successful!')
                           } catch (err) {
                             console.log(err)
                           }
                         }}>Accept Swap</Button>
+                        {notification ? <p>{notification}</p> : null}
                       </div>
                     )
                   } else {
