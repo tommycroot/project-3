@@ -53,7 +53,7 @@ const Profile = () => {
 
 
   return (
-    <Container>
+    <Container className="profile-container">
       {userInfo &&
         <Row>
           <Col xs="12">
@@ -74,7 +74,7 @@ const Profile = () => {
                         <div style={{ backgroundImage: `url('${image}')` }} className="thumbnail"></div>
                         <Card.Body>
                           <Card.Title>{title}</Card.Title>
-                          <Card.Subtitle>£{swapValue}</Card.Subtitle>
+                          <Card.Subtitle>Swap valus: £{swapValue}</Card.Subtitle>
                         </Card.Body>
                       </Card>
                     </Link>

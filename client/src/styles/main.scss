@@ -8,7 +8,7 @@
 
 body {
   margin: 0;
-  background: linear-gradient(black 11%, transparent 15%) no-repeat;
+  background: black;
 }
 
 .nav {
@@ -22,10 +22,10 @@ body {
       text-align: center;
     
       .nav-link {
-        color: white;
+        color: #898989;;
         font-weight: 600;
         &:hover, &.active {
-          background-color: beige !important;
+          background-color: #898989 !important;
           color: #000;
           font-weight: 600;
         }
@@ -47,12 +47,12 @@ body {
 
   h1 {
     font-weight: bold;
-    color: #ffffff;
+    color: #898989;
   }
 
   .hero-text{
-    color: #ffffff;
-  }
+  color: #898989;
+}
 
 }
 
@@ -65,7 +65,7 @@ body {
 
   .card-body{
     color: black;
-    background: beige;
+    background: #898989;
 
     .card-title{
       font-size: 25px;
@@ -161,6 +161,10 @@ border-radius: 35px;
     top: 0;
     left: 0;
   }
+}
+
+.profile-container {
+  color: #898989;
 }
 
 .item-container-profile{

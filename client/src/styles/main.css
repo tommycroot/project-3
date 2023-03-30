@@ -6,7 +6,7 @@
 
 body {
   margin: 0;
-  background: linear-gradient(black 11%, transparent 15%) no-repeat;
+  background: black;
 }
 
 .nav {
@@ -20,11 +20,11 @@ body {
   text-align: center;
 }
 .nav .nav-item .nav-link {
-  color: white;
+  color: #898989;
   font-weight: 600;
 }
 .nav .nav-item .nav-link:hover, .nav .nav-item .nav-link.active {
-  background-color: beige !important;
+  background-color: #898989 !important;
   color: #000;
   font-weight: 600;
 }
@@ -40,10 +40,10 @@ body {
 }
 .hero h1 {
   font-weight: bold;
-  color: #ffffff;
+  color: #898989;
 }
 .hero .hero-text {
-  color: #ffffff;
+  color: #898989;
 }
 
 .item {
@@ -52,7 +52,7 @@ body {
 }
 .item .card-body {
   color: black;
-  background: beige;
+  background: #898989;
 }
 .item .card-body .card-title {
   font-size: 25px;
@@ -135,6 +135,10 @@ a {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.profile-container {
+  color: #898989;
 }
 
 .item-container-profile {
