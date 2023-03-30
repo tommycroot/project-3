@@ -120,7 +120,7 @@ const Profile = () => {
                           try {
                             await authenticated.delete(`api/items/${item._id}/messages`)
                             await authenticated.put(`api/trade/${item._id}/${swapURL}`)
-                            navigate('/')
+                            location.reload()
                           } catch (err) {
                             console.log(err)
                           }
