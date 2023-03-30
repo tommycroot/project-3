@@ -42,3 +42,17 @@ export const deleteMessage = async (req, res) => {
     return sendError(err, res)
   }
 }
+
+export const deleteAllMessages = async (req, res) => {
+  try {
+    const { itemId } = req.params
+    const item = await Item.findById(itemId)
+    if (!item) throw new NotFound('Messages not found')
+    console.log(item.messages)
+    item.messages = []
+    await item.save()
+    return res.sendStatus(204)
+  } catch (err) {
+    return sendError(err, res)
+  }
+}
