@@ -160,7 +160,7 @@ body {
 }
 .nav .nav-item {
   margin-right: 50px;
-  width: 150px;
+  width: 160px;
   text-align: center;
 }
 .nav .nav-item .nav-link {
@@ -185,6 +185,9 @@ body {
 .hero h1 {
   font-weight: bold;
   color: #898989;
+}
+.hero h1 span {
+  color: #51BED3;
 }
 .hero .hero-text {
   color: #898989;
