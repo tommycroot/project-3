@@ -58,7 +58,7 @@ const ItemPage = () => {
           </Col>
           <Col md={6} className='itemInfo'>
             <div>
-              <p>Location: {location} , {owner.borough}</p>
+              <p>Location: {owner.location} , {owner.borough}</p>
               <p>Condition: {condition}</p>
               <p>Approximate Value: £{swapValue}</p>
             </div>
