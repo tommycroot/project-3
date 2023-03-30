@@ -346,6 +346,159 @@ export default [
     image: 'https://i.ebayimg.com/images/g/09UAAOSwL1tj1Uhz/s-l1600.jpg',
   },
 
+  {
+    title: 'Vintage Brass Telescope',
+    category: 'Collectables & Antiques',
+    description: 'Beautiful brass telescope in great condition, perfect for collectors or enthusiasts.',
+    condition: 'Used but in excellent condition',
+    swapValue: 100,
+    image: 'https://imagedelivery.net/ePR8PyKf84wPHx7_RYmEag/e3faf7f5-fc1c-43f3-cd25-5fff7b32f700/86',
+  },
+  {
+    title: 'Leather High-Back Executive Chair',
+    category: 'Home & Garden',
+    description: 'High-quality leather chair, perfect for any home or office. Provides excellent back support and comfort.',
+    location: 'Birmingham, UK',
+    condition: 'Like new',
+    swapValue: 200,
+    image: 'https://laporta.co.uk/wp-content/uploads/2022/07/NESI-Black-With-TAIKO-min-600x600.jpg',
+  },
+  {
+    title: 'Nike Air Max 270 React',
+    category: 'Fashion',
+    description: 'Brand new Nike Air Max 270 React shoes in size 10.5. Stylish and comfortable, perfect for everyday wear.',
+    condition: 'Brand new',
+    swapValue: 120,
+    image: 'https://images.stockx.com/images/Nike-Air-Max-270-React-Yellow-Red-GS.png?fit=fill&bg=FFFFFF&w=480&h=320&fm=webp&auto=compress&dpr=2&trim=color&updated_at=1620332130&q=75',
+  },
+  {
+    title: 'Canon EOS 80D Camera',
+    category: 'Electronics',
+    description: 'High-quality Canon EOS 80D camera with 18-135mm lens. In great condition and ready to use.',
+    condition: 'Used but in excellent condition',
+    swapValue: 500,
+    image: 'https://i.pcmag.com/imagery/reviews/01YR4dfL9OfY6kFLvDZeMDI-24..v1569473448.jpg',
+  },
+  {
+    title: 'Solid Oak Coffee Table',
+    category: 'Home & Garden',
+    description: 'Beautiful solid oak coffee table in excellent condition. A perfect addition to any living room.',
+    condition: 'Like new',
+    swapValue: 150,
+    image: 'https://www.pineandoakshop.co.uk/image/cache//Bordeaux%20Oak/bordeaux_oak_coffee_table_with_drawers_and_shelf-RG93X2CT-01-700x700.jpg',
+  },
+  {
+    title: 'Vintage Swiss Army Knife',
+    category: 'Collectables & Antiques',
+    description: 'Rare vintage Swiss Army knife in excellent condition. A must-have for any collector.',
+    condition: 'Used but in excellent condition',
+    swapValue: 75,
+    image: 'https://sites.create-cdn.net/siteimages/33/6/8/336800/16/0/7/16078767/850x638.jpg?1514746093',
+  },
+  {
+    title: 'Fitbit Versa 3 Smartwatch',
+    category: 'Electronics',
+    description: 'Brand new Fitbit Versa 3 smartwatch in Black. Never been used and in its original packaging.',
+    condition: 'Brand new',
+    swapValue: 180,
+    image: 'https://www.trustedreviews.com/wp-content/uploads/sites/54/2021/01/Fitbit-Versa-3-4-920x690.jpg',
+  },
+  {
+    title: 'Handmade Ceramic Vase',
+    category: 'Home & Garden',
+    description: 'Beautiful handmade ceramic vase in excellent condition. Perfect for adding a touch of elegance to any room.',
+    condition: 'Like new',
+    swapValue: 50,
+    image: 'https://cdn.shopify.com/s/files/1/0266/4087/5619/products/MAE-0010_v2_1024x1024.jpg?v=1664382149',
+  },
+
+  {
+    title: 'Omega Seamaster Aqua Terra',
+    category: 'Jewellery & Watches',
+    description: 'This is a stunning Omega Seamaster Aqua Terra wristwatch. It features a blue dial with silver-tone hands and hour markers, and a date window at the 6 o\'clock position.', 
+    condition: 'Excellent',
+    swapValue: 8000,
+    image: 'https://timeandtidewatches.com/wp-content/uploads/2017/10/Omega-Seamaster-Aqua-Terra-blue-6.jpg',
+  },
+
+  {
+    title: 'Oak Wood Console Table',
+    category: 'Home & Garden',
+    description: 'A beautifully crafted oak wood console table with two drawers and elegant design.',
+    condition: 'Brand new',
+    swapValue: 400,
+    image: 'https://www.topfurniture.co.uk/media/catalog/product/c/o/countr911-country-oak-3-drawer-console-table-hallway-furniture-1.jpg',
+  },
+
+  {
+    title: 'Signed Muhammad Ali Boxing Glove',
+    category: 'Collectables & Antiques',
+    description: 'A rare signed Muhammad Ali boxing glove with a certificate of authenticity.',
+    condition: 'Used - excellent condition',
+    swapValue: 800,
+    image: 'https://sothebys-md.brightspotcdn.com/dims4/default/2d06ad3/2147483647/strip/true/crop/2000x1546+0+0/resize/2048x1583!/quality/90/?url=http%3A%2F%2Fsothebys-brightspot.s3.amazonaws.com%2Fmedia-desk%2F5b%2F5a%2F0dd1fd724cbeb1f179dd37aeb6f2%2F006n10571-bqbjv.jpgg',
+  },
+
+  {
+    title: 'Canon EOS R6 Camera',
+    category: 'Electronics',
+    description: 'A high-quality Canon EOS R6 camera with 20-105mm lens, perfect for capturing stunning photographs and videos.',
+    location: 'Manchester, UK',
+    condition: 'Like new',
+    swapValue: 2000,
+    image: 'https://amateurphotographer.com/wp-content/uploads/sites/7/2023/02/Canon_EOS_R6_Mark_II-01.jpg',
+  },
+
+  {
+    title: 'Cartier Love Bracelet',
+    category: 'Jewellery & Watches',
+    description: 'A beautiful Cartier Love Bracelet made of 18k gold with a screwdriver included.',
+    location: 'London, UK',
+    condition: 'Used - very good condition',
+    swapValue: 5000,
+    image: 'https://images.squarespace-cdn.com/content/54f9c79ce4b0a50e0977e31e/1583256755033-J185WD14R2BRXQQWKRI0/cartier?format=1500w&content-type=image%2Fjpeg',
+  },
+
+  {
+    title: 'Nintendo Switch Console',
+    category: 'Toys & Games',
+    description: 'A Nintendo Switch console in excellent condition with two games included.',
+    location: 'Edinburgh, UK',
+    condition: 'Used - very good condition',
+    swapValue: 300,
+    image: 'https://i2-prod.birminghammail.co.uk/incoming/article23051923.ece/ALTERNATES/s1200b/1_erik-mclean-EdUYo2Y435s-unsplash.jpg',
+  },
+
+  {
+    title: 'Victorian Writing Desk',
+    category: 'Home & Garden',
+    description: 'A beautiful Victorian writing desk made of solid oak with two drawers and an elegant design.',
+    location: 'Leeds, UK',
+    condition: 'Used - good condition',
+    swapValue: 600,
+    image: 'https://images.squarespace-cdn.com/content/v1/54f814d7e4b0791c9a3f8522/1454668448603-QS3NUDIIE3M4PBGP4MWN/h8113.JPG?format=2500w',
+  },
+
+  {
+    title: 'Signed Wayne Rooney Football Boot',
+    category: 'Collectables & Antiques',
+    description: 'A signed Wayne Rooney football boot with a certificate of authenticity.',
+    location: 'Manchester, UK',
+    condition: 'Used - excellent condition',
+    swapValue: 800,
+    image: 'https://marlowmemorabilia.com/wp-content/uploads/2020/09/Rooney-boot-500x500-1.jpg',
+  },
+
+  {
+    title: 'Rolex Daytona',
+    category: 'Jewellery & Watches',
+    description: 'This is a beautiful Rolex Daytona wristwatch. It features a black dial with silver-tone hands and hour markers, and three subdials displaying 60 seconds, 30 minutes, and 12 hours.', 
+
+    condition: 'Like new',
+    swapValue: 20000,
+    image: 'https://content.rolex.com/dam/watches/family-pages/cosmograph-daytona/all-models/professional-watches-cosmograph-daytona-share_m116518ln_0040_1706jva_001_r.jpg',
+  },
+
 
   {
     title: 'Round-trip Plane Ticket to Fiji',

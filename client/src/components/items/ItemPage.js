@@ -7,7 +7,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { Button } from 'react-bootstrap'
 import MessageForm from '../messages/MessageForm.js'
-import { userIsOwner, authenticated } from '../helpers/auth.js'
+import { userIsOwner, authenticated, isAuthenticated } from '../helpers/auth.js'
 
 const ItemPage = () => {
   console.log('itempage')
@@ -62,7 +62,6 @@ const ItemPage = () => {
               <p>Condition: {condition}</p>
               <p>Approximate Value: £{swapValue}</p>
             </div>
-            <Button className='swapNow'>Swap Now</Button>
             {userIsOwner(item) && <div><Link to={`/items/${id}/edit`} className='editItem'>Edit Item</Link></div>}
             {userIsOwner(item) && <div><Link className='deleteItem' onClick={handleDelete}>Delete Item</Link></div>}
           </Col>
@@ -75,7 +74,8 @@ const ItemPage = () => {
 
             </Col>
           </Row>
-          <MessageForm id = {id}  />
+          {!userIsOwner(item) && isAuthenticated() && <MessageForm id = {id}  />}
+          
         </Row>
       </Container>
     </>
