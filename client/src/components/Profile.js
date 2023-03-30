@@ -118,7 +118,6 @@ const Profile = () => {
                         <Link to={message.itemToSwap}>Click here to see my Item! </Link>
                         <Button onClick={async () => {
                           try {
-                            await authenticated.put(`api/trade/${item._id}/${swapURL}`)
                             await authenticated.delete(`api/items/${item._id}/messages`)
                             await authenticated.put(`api/trade/${item._id}/${swapURL}`)
                             location.reload()
