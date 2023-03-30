@@ -11,6 +11,7 @@ import Card from 'react-bootstrap/Card'
 
 import Spinner from './Spinner.js'
 import Error from './Error.js'
+import haglLogo from '../images/HAGLLOGO.png'
 
 const Home = () => {
 
@@ -34,12 +35,18 @@ const Home = () => {
 
   return (
     <>
+      <div>
+        <Col xs="12" className="hero">
+          <img src={haglLogo} className="logo" alt="hagl logo"></img>
+          <div>
+            <h1 className="display-4 mb-4 text-center">Items available for swap!</h1>
+            <p className="hero-text text-center">HAGL is a free to use online marketplace where users can swap their junk items.</p>
+            <p className="hero-text text-center">Sign up and try it today!</p>
+          </div>
+        </Col>
+      </div>
       <Container>
         <Row>
-          <Col xs="12">
-            <h1 className="display-4 mb-4 text-center">Items available for swap!</h1>
-          </Col>
-
           {items.length > 0 ?
             items.map(item => {
               const { _id, title, swapValue, image, owner, borough } = item
@@ -50,7 +57,7 @@ const Home = () => {
                     <Card>
                       <div style={{ backgroundImage: `url('${image}')` }} className="thumbnail"></div>
                       <Card.Body>
-                        <Card.Title>{title}</Card.Title>
+                        <Card.Title className="card-title">{title}</Card.Title>
                         <Card.Subtitle>Swap value: £{swapValue}</Card.Subtitle>
                         <Card.Text>
                           <p>{owner.username}<br></br>{owner.location}, {owner.borough}</p>

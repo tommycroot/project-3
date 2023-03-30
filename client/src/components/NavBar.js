@@ -3,10 +3,14 @@ import axios from 'axios'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
+import { Image } from 'react-bootstrap'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
 import { isAuthenticated, removeToken } from './helpers/auth'
 import DealOfDay from '../components/DealOfDay'
+
+
+
 
 
 
@@ -24,14 +28,13 @@ const NavBar = () => {
   }
 
   return (
-    <Nav variant="tabs" defaultActiveKey="/">
+    <Nav variant="pills" defaultActiveKey="/">
       <Nav.Item>
         <Nav.Link to="/" as={Link} className={location.pathname === '/' ? 'active' : ''}>Home</Nav.Link>
       </Nav.Item>
       <Nav.Item>
         <Nav.Link to="/dealofday" as={Link} className={location.pathname === '/dealofday' ? 'active' : ''}>Deal of the Day</Nav.Link>
       </Nav.Item>
-
       {isAuthenticated() ?
         <>
           <Nav.Item>
