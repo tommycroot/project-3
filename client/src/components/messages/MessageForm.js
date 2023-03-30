@@ -23,12 +23,16 @@ const MessageForm = ({ id }) => {
     e.preventDefault()
     try {
       await authenticated.post(`/api/items/${id}/messages`, formFields)
+      window.alert('Your swap request has been submitted.')
+      setFormFields({
+        text: '',
+        itemToSwap: '',
+      })
     } catch (err) {
-      console.log(err)
+      console.log(err)  
     }
 
   }
-
   const handleChange = (e) => {
     setFormFields({ ...formFields, [e.target.name]: e.target.value })
 
