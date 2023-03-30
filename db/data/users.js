@@ -39,7 +39,7 @@ export default [
 
   {
     username: 'Emma',
-    location: 'Porstmouth',
+    location: 'Portsmouth',
     borough: 'Southsea',
     email: 'emma@email.com',
     password: 'pass',

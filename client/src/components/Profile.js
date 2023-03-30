@@ -50,14 +50,12 @@ const Profile = () => {
   }
 
 
-
-
   return (
     <Container className="profile-container">
       {userInfo &&
         <Row>
-          <Col xs="12">
-            <h1>Welcome back, {userInfo.username}</h1>
+          <Col xs="12" className="welcome">
+            <h1>Welcome back, <span>{userInfo.username}</span></h1>
             <h2>Listed items:</h2>
           </Col>
 
@@ -68,13 +66,13 @@ const Profile = () => {
                 const { _id, title, swapValue, image } = item
 
                 return (
-                  <Col key={_id} lg="5" sm="12" className="item-card-profile">
+                  <Col key={_id} lg="3" sm="12" className="item-card-profile">
                     <Link to={`/items/${_id}`}>
                       <Card>
-                        <div style={{ backgroundImage: `url('${image}')` }} className="thumbnail"></div>
+                        <div style={{ backgroundImage: `url('${image}')` }} className="profile-thumbnail"></div>
                         <Card.Body>
                           <Card.Title>{title}</Card.Title>
-                          <Card.Subtitle>Swap valus: £{swapValue}</Card.Subtitle>
+                          <Card.Text>Swap value: £{swapValue}</Card.Text>
                         </Card.Body>
                       </Card>
                     </Link>
@@ -93,33 +91,37 @@ const Profile = () => {
 
           </Col>
 
-          <Col>
-            <h2>Location: {userInfo.location}</h2>
-            <h3>Your average rating: {userInfo.averageRating}</h3>
+          <Col className="right-content">
+
+            <h2>Location: <span>{userInfo.location}</span></h2>
+            <h3>Your average rating: <span>{userInfo.averageRating}</span></h3>
             <p>Click an item card to view your listing and make edits.</p>
-            <Button onClick={postNewItem}>List new item</Button>
+            <div className="info-wrapper">
+              <Button onClick={postNewItem} className="list-item-btn lib">List new item</Button>
+            </div>
 
-
-            <div>
+            <div className="messages-container">
               {userInfo.items.map(item => {
                 console.log('Item Message', item.messages)
+                
                 const itemMessages = item.messages
                 console.log('constMessages', itemMessages)
                 if (itemMessages.length > 0) {
                   messagesExist = true
                   return itemMessages.map((message, index) => {
                     console.log('logged message', message.text)
+                    console.log('messageID', message._id)
                     console.log('item url', message.itemToSwap)
                     const idB = message.itemToSwap.split('/')
                     const swapURL = idB[idB.length - 1]
                     console.log('idb', idB)
                     if (message.text) {
                       return (
-                        <div key={`${item.id}-${index}`}>
-                          <p>{item.title}</p>
+                        <div className="message-field" key={`${item.id}-${index}`}>
+                          <h4>{item.title}</h4>
                           <p>{message.text}</p>
                           <Link to={message.itemToSwap}>Click here to see my Item! </Link>
-                          <Button onClick={async () => {
+                          <Button className="list-item-btn swap-button" onClick={async () => {
                             try {
                               await authenticated.delete(`api/items/${item._id}/messages`)
                               await authenticated.put(`api/trade/${item._id}/${swapURL}`)
@@ -130,7 +132,19 @@ const Profile = () => {
                             }
                           }}>Accept Swap</Button>
                           {notification ? <p>{notification}</p> : null}
+                          <Button className="list-item-btn Delete-button" onClick={async () => {
+                            try {
+                              await authenticated.delete(`api/items/${item._id}/messages/${message._id}`)
+                              //http://localhost:3000/api/items/6425b34c05da630d0cbb1ff5/messages/6425c6d64b868beb20cfbac8
+                              
+                              location.reload()
+                            } catch (err) {
+                              console.log(err.message)
+                            }
+                          }
+                          } >Delete Message</Button>
                         </div>
+
                       )
                     } else {
                       return null
@@ -139,7 +153,7 @@ const Profile = () => {
                 }
               }
               )}
-              {!messagesExist &&  (<> <p>You have no messages</p> </>) } 
+              {!messagesExist && (<> <p>You have no messages</p> </>)}
             </div>
 
           </Col>

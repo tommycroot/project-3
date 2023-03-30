@@ -579,6 +579,64 @@ export default [
     condition: 'Used, in excellent condition with service receipts',
     swapValue: 6000,
     image: 'https://images.medialinksonline.com/imagestream/389488/4138292x4032x3024_FFFFFF_L_0.jpg',
+  },
+
+  {
+    title: 'Vintage Soda Bottle',
+    category: 'Collectables & Antiques',
+    description: 'This is a vintage soda bottle from the 1960s. It features a classic design and is in great condition with no chips or cracks.',
+    condition: 'Used',
+    swapValue: 10,
+    image: 'https://www.trampsuk.co.uk/wp-content/uploads/2022/06/31266-fanta-7-scaled.jpg',
+  },
+  {
+    title: 'Faux Leather Messenger Bag',
+    category: 'Fashion',
+    description: 'This is a stylish faux leather messenger bag. It has multiple compartments and is perfect for carrying your everyday essentials.',
+    condition: 'New',
+    swapValue: 25,
+    image: 'https://d1flfk77wl2xk4.cloudfront.net/Assets/GalleryImage/62/870/L_g0091087062.jpg',
+  },
+  {
+    title: 'Wireless Bluetooth Speaker',
+    category: 'Electronics',
+    description: 'This is a wireless Bluetooth speaker with great sound quality. It is small and portable, making it perfect for on-the-go listening.',
+    condition: 'Used',
+    swapValue: 15,
+    image: 'https://www.cnet.com/a/img/resize/f12b99937bf555eac4777027f6ca852ad4758de2/hub/2020/05/15/14e3d04d-47ca-4efc-a1a8-071162d42b7b/anker-soundcore-motion-plus-12.jpg?auto=webp&fit=crop&height=528&width=940',
+  },
+  {
+    title: 'Rubber Duck Bath Toy',
+    category: 'Toys & Games',
+    description: 'This is a cute rubber duck bath toy that floats in the water. It is perfect for kids and adults alike!',
+    condition: 'New',
+    swapValue: 5,
+    image: 'https://multigift.com/images/detailed/74/283320.jpg',
+  },
+  {
+    title: 'LED Desk Lamp',
+    category: 'Home & Garden',
+    description: 'This is a modern LED desk lamp with adjustable brightness and color temperature. It is perfect for studying or working late at night.',
+    condition: 'Like new',
+    swapValue: 20,
+    image: 'https://i.ebayimg.com/images/g/NVEAAOSw6EtjYqw6/s-l500.jpg',
+  },
+  {
+    title: 'Resistance Bands Set',
+    category: 'Sporting Goods',
+    description: 'This is a set of resistance bands for working out at home. It comes with multiple bands of different strengths and a carrying case.',
+    condition: 'New',
+    swapValue: 30,
+    image: 'https://www.runtastic.com/blog/wp-content/uploads/2020/08/thumbnail_1200x800-1-1024x683.jpg',
+  },
+
+  {
+    title: 'Graphic T-Shirt',
+    category: 'Fashion',
+    description: 'This is a stylish graphic T-shirt with a cool design. It is made from high-quality cotton and is very comfortable to wear.',
+    condition: 'New',
+    swapValue: 15,
+    image: 'https://images.lifestyleasia.com/wp-content/uploads/sites/2/2022/01/05132203/Screenshot-2022-01-05-at-1.21.47-PM.png',
   }
 
 

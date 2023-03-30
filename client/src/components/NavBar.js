@@ -33,7 +33,7 @@ const NavBar = () => {
         <Nav.Link to="/" as={Link} className={location.pathname === '/' ? 'active' : ''}>Home</Nav.Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link to="/dealofday" as={Link} className={location.pathname === '/dealofday' ? 'active' : ''}>Deal of the Day</Nav.Link>
+        <Nav.Link to="/dealofday" as={Link} className={location.pathname === '/dealofday' ? 'active' : ''}>Deals of the Day</Nav.Link>
       </Nav.Item>
       {isAuthenticated() ?
         <>
