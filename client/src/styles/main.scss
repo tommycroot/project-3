@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap');
+@import './components/profile.scss';
 
 * {
   box-sizing: border-box;
@@ -163,17 +164,5 @@ border-radius: 35px;
   }
 }
 
-.profile-container {
-  color: #898989;
-}
 
-.item-container-profile{
-  display: flex;
-  flex-wrap: wrap;
-
-  .item-card-profile {
-    margin-right: 30px;
-    margin-bottom: 30px;
-  }
-}
 

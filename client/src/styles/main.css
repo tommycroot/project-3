@@ -1,4 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap");
+.profile-container {
+  color: #898989;
+}
+
+.item-container-profile {
+  display: flex;
+  flex-wrap: wrap;
+}
+.item-container-profile .item-card-profile {
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+
 * {
   box-sizing: border-box;
   font-family: "Raleway", serif;
@@ -135,17 +148,4 @@ a {
   position: absolute;
   top: 0;
   left: 0;
-}
-
-.profile-container {
-  color: #898989;
-}
-
-.item-container-profile {
-  display: flex;
-  flex-wrap: wrap;
-}
-.item-container-profile .item-card-profile {
-  margin-right: 30px;
-  margin-bottom: 30px;
 }/*# sourceMappingURL=main.css.map */
