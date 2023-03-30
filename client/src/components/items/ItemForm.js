@@ -34,7 +34,9 @@ const ItemForm = ({ title, formFields, setFormFields, error, setError, handleSub
           <label htmlFor="image">Image</label>
           <input type="text" name="image" placeholder='Image' value={formFields.image} onChange={handleChange} />
           {/* Submit */}
-          <button className="btn btn-brown w-100">Submit</button>
+          <div className='btnCenter'>
+            <button className="btn mb-4">Submit</button>
+          </div>
           {/* Error Display */}
           { error && <p className='text-danger text-center'>{error}</p>}
         </Col>
