@@ -3,6 +3,7 @@
   background-color: #898989;
   border-radius: 8px;
   padding: 20px;
+  margin-bottom: 30px;
 }
 .form-page form label {
   display: block;
@@ -28,6 +29,11 @@
   font-weight: bold;
   width: 100px;
   margin-top: 10px;
+}
+.form-page form button:enabled:active {
+  background-color: #51BED3;
+  box-shadow: 0 0 2px darkslategray;
+  transform: translateY(px);
 }
 .form-page form .submitbtn {
   background-color: grey;

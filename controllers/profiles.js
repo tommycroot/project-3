@@ -30,16 +30,21 @@ export const getSingleProfile = async (req, res) => {
     const { profileId } = req.params
 
     const profile = await User.findById(profileId)
+    console.log('PROFILE', profile)
 
     if (!profile) throw new NotFound('Profile not found')
 
     const items = await Item.find()
+
+    
 
     const userItems = items.filter(item => {
       if (JSON.stringify(item.owner._id) === JSON.stringify(profile._id) ) return item
     })
 
     const combined = { ...profile._doc, items: userItems }
+
+    console.log(combined)
 
     delete combined.password
 
