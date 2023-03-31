@@ -71,7 +71,6 @@ const ItemPage = () => {
                 Description <br />
                 {description}
               </div>
-
             </Col>
           </Row>
           {!userIsOwner(item) && isAuthenticated() && <MessageForm id = {id}  />}

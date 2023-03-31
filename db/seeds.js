@@ -14,7 +14,7 @@ const seedDatabase = async () => {
   try {
 
     //Connect to database
-    await mongoose.connect(process.env.MONGO_URI)
+    await mongoose.connect(process.env.MONGO_URI, { maxPoolSize: 10 })
     console.log('💎 Database connected.')
 
     //Drop database
