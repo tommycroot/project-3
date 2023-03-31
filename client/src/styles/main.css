@@ -99,6 +99,7 @@
   background-color: #898989;
   border-radius: 8px;
   padding: 20px;
+  margin-bottom: 30px;
 }
 .form-page form label {
   display: block;
@@ -125,6 +126,11 @@
   width: 100px;
   margin-top: 10px;
 }
+.form-page form button:enabled:active {
+  background-color: #51BED3;
+  box-shadow: 0 0 2px darkslategray;
+  transform: translateY(px);
+}
 .form-page form .submitbtn {
   background-color: grey;
   color: black;
@@ -145,12 +151,13 @@
 
 * {
   box-sizing: border-box;
-  font-family: "Raleway", serif;
+  font-family: "Raleway", serif !important;
 }
 
 body {
   margin: 0;
   background: black;
+  font-family: "Raleway", serif !important;
 }
 
 .nav {
@@ -193,6 +200,30 @@ body {
   color: #898989;
 }
 
+.hero {
+  height: 50vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.hero h1 {
+  font-weight: bold;
+  color: #898989;
+}
+
+.hero img {
+  height: 75%;
+}
+
+.hero h1 span {
+  color: #51BED3;
+}
+
+.hero .hero-text {
+  color: #898989;
+}
+
 .item {
   margin-bottom: 40px;
   text-align: center;
@@ -217,11 +248,7 @@ body {
   justify-content: space-between;
 }
 .imageInfoRow:nth-child(2) {
-  margin-top: 50px;
-}
-
-.itemInfo {
-  padding: 70px;
+  margin-top: 30px;
 }
 
 .description {
@@ -267,4 +294,57 @@ a {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.titleLocation h1 {
+  color: #898989;
+}
+
+.itemInfo {
+  padding: 70px;
+  text-align: center;
+}
+.itemInfo p {
+  color: #898989;
+}
+.itemInfo h3 {
+  font-size: 30px;
+}
+.itemInfo h3 span {
+  color: #51BED3;
+  font-size: 25px;
+}
+.itemInfo .deleteItem {
+  color: red;
+}
+
+.description .col p {
+  color: #898989;
+}
+.description .col span {
+  color: #51BED3;
+  font-size: 20px;
+}
+
+.delete-button {
+  color: white;
+  background-color: red !important;
+}
+
+.delete-button:enabled:active {
+  background-color: #850000 !important;
+  box-shadow: 0 0 2px darkslategray !important;
+  transform: translateY(px) !important;
+}
+
+.image-pic {
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 35px;
+}
+
+.item-row {
+  margin-top: 20px;
 }/*# sourceMappingURL=main.css.map */

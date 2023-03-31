@@ -21,6 +21,7 @@ const ItemPage = () => {
   useEffect(() => {
     const getData = async () => {
       const { data } = await axios.get(`/api/items/${id}`)
+      console.log('RESPONSE', data)
       setItem(data)
     }
 
@@ -46,21 +47,21 @@ const ItemPage = () => {
   return (
     <>
       <Container>
-        <div className="heroSection" id='hero'></div>
-        <Row >
+        <Row className="item-row">
           <Col className='titleLocation'>
             <h1>{title}</h1>
           </Col>
         </Row>
         <Row className="imageInfoRow">
           <Col md={6}>
-            <img src={image} alt={title} className='singleImage' />
+            <div style={{ backgroundImage: `url('${image}')` }} className="image-pic"></div>
           </Col>
           <Col md={6} className='itemInfo'>
-            <div>
-              <p>Location: {owner.location} , {owner.borough}</p>
-              <p>Condition: {condition}</p>
-              <p>Approximate Value: £{swapValue}</p>
+            <div className='itemInfoText'>
+              <h3><span>Location:</span></h3> <p>{owner.location} , {owner.borough}</p>
+              <h3><span>Condition:</span></h3> <p>{condition}</p>
+              <h3><span>Approximate Value:</span></h3> <p>£{swapValue}</p>
+              <h3><span>Owner:</span></h3> <p>{owner.username}</p>
             </div>
             {userIsOwner(item) && <div><Link to={`/items/${id}/edit`} className='editItem'>Edit Item</Link></div>}
             {userIsOwner(item) && <div><Link className='deleteItem' onClick={handleDelete}>Delete Item</Link></div>}
@@ -68,10 +69,9 @@ const ItemPage = () => {
           <Row className='description'>
             <Col>
               <div>
-                Description <br />
-                {description}
+                <span>Description</span><br />
+                <p>{description}</p>
               </div>
-
             </Col>
           </Row>
           {!userIsOwner(item) && isAuthenticated() && <MessageForm id = {id}  />}

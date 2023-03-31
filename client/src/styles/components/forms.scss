@@ -5,6 +5,7 @@
     background-color: #898989;
     border-radius: 8px;
     padding: 20px;
+    margin-bottom: 30px;
     label{
       display: block;
       margin-left: 4px;
@@ -31,6 +32,14 @@
       width: 100px;
       margin-top: 10px;
     }
+    
+
+    button:enabled:active {
+      background-color: #51BED3;;
+      box-shadow: 0 0 2px darkslategray;
+      transform: translateY(px);
+    }
+
     .submitbtn {
       background-color: grey;
       color: black;

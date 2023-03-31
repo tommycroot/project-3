@@ -22,7 +22,7 @@ const MessageForm = ({ id }) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const response = confirm('Are you sure?')
+      const response = confirm('Are you sure you want to offer this trade? Your offer is final once submitted.')
       if (response) {
         window.alert('Your swap request has been submitted.')
         await authenticated.post(`/api/items/${id}/messages`, formFields)

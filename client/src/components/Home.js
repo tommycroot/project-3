@@ -12,6 +12,7 @@ import Card from 'react-bootstrap/Card'
 import Spinner from './Spinner.js'
 import Error from './Error.js'
 import haglLogo from '../images/HAGLLOGO.png'
+import Hero from './Hero.js'
 
 const Home = () => {
 
@@ -38,11 +39,7 @@ const Home = () => {
       <div>
         <Col xs="12" className="hero">
           <img src={haglLogo} className="logo" alt="hagl logo"></img>
-          <div>
-            <h1 className="display-4 mb-4 text-center">Swap your <span>junk!</span></h1>
-            <p className="hero-text text-center">HAGL is a free to use online marketplace where users can swap their junk items.</p>
-            <p className="hero-text text-center">Sign up and try it today!</p>
-          </div>
+          {<Hero />}
         </Col>
       </div>
       <Container>

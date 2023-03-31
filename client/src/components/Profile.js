@@ -132,7 +132,7 @@ const Profile = () => {
                             }
                           }}>Accept Swap</Button>
                           {notification ? <p>{notification}</p> : null}
-                          <Button className="list-item-btn Delete-button" onClick={async () => {
+                          <Button className="list-item-btn delete-button" onClick={async () => {
                             try {
                               await authenticated.delete(`api/items/${item._id}/messages/${message._id}`)
                               //http://localhost:3000/api/items/6425b34c05da630d0cbb1ff5/messages/6425c6d64b868beb20cfbac8
