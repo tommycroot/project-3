@@ -31,6 +31,14 @@
       width: 100px;
       margin-top: 10px;
     }
+    
+
+    button:enabled:active {
+      background-color: #51BED3;;
+      box-shadow: 0 0 2px darkslategray;
+      transform: translateY(px);
+    }
+
     .submitbtn {
       background-color: grey;
       color: black;
