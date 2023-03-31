@@ -58,9 +58,9 @@ const ItemPage = () => {
           </Col>
           <Col md={6} className='itemInfo'>
             <div>
-              <p>Location: {owner.location} , {owner.borough}</p>
-              <p>Condition: {condition}</p>
-              <p>Approximate Value: £{swapValue}</p>
+              <span>Location:</span> <p>{owner.location} , {owner.borough}</p>
+              <span>Condition:</span> <p>{condition}</p>
+              <span>Approximate Value:</span> <p>£{swapValue}</p>
             </div>
             {userIsOwner(item) && <div><Link to={`/items/${id}/edit`} className='editItem'>Edit Item</Link></div>}
             {userIsOwner(item) && <div><Link className='deleteItem' onClick={handleDelete}>Delete Item</Link></div>}
@@ -68,8 +68,8 @@ const ItemPage = () => {
           <Row className='description'>
             <Col>
               <div>
-                Description <br />
-                {description}
+                <span>Description</span><br />
+                <p>{description}</p>
               </div>
 
             </Col>

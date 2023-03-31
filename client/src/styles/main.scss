@@ -2,14 +2,18 @@
 @import './components/profile.scss';
 @import './components/forms';
 
+
+
+
 * {
   box-sizing: border-box;
-  font-family: 'Raleway', serif;
+  font-family: 'Raleway', serif !important;
 }
 
 body {
   margin: 0;
   background: black;
+  font-family: 'Raleway', serif !important;
 }
 
 .nav {
@@ -63,7 +67,28 @@ body {
 }
 
 
+.hero {
+  height: 50vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
 
+.hero h1 {
+  font-weight: bold;
+  color: #898989;
+}
+
+.hero img {
+  height: 75%;
+}
+
+.hero h1 span {
+  color: #51BED3;
+}
+.hero .hero-text {
+  color: #898989;
+}
 
 .item {
   margin-bottom: 40px;
@@ -79,9 +104,6 @@ body {
     }
 
   }
-
- 
-
 }
 
 .singleImage {
@@ -153,4 +175,46 @@ border-radius: 35px;
 }
 
 
+.titleLocation {
+  h1 {
+    color: #898989;
+  }
+}
 
+.itemInfo {
+  p {
+   color: #898989;
+  }
+  span {
+    font-size: 20px;
+    color: #51BED3;
+  }
+  .deleteItem {
+    color: red;
+  }
+}
+
+
+.description {
+    .col {
+      p {
+        color: #898989
+      }
+      span {
+        color: #51BED3;
+        font-size: 20px;
+      }
+    }
+}
+
+.delete-button {
+  color: white;
+  background-color: red !important;
+}
+
+
+.delete-button:enabled:active {
+  background-color: #850000 !important;
+  box-shadow: 0 0 2px darkslategray !important;
+  transform: translateY(px) !important;
+}
