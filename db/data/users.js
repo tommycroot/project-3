@@ -144,14 +144,7 @@ export default [
     password: 'pass',
     passwordConfirmation: 'pass',
   },
-  {
-    username: 'William',
-    location: 'Belfast',
-    borough: 'Queens Quarter',
-    email: 'william@email.com',
-    password: 'pass',
-    passwordConfirmation: 'pass',
-  },
+
   {
     username: 'Isabella',
     location: 'Cardiff',
