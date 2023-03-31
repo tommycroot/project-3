@@ -11,6 +11,7 @@ import Login from './components/auth/Login'
 import ItemNew from './components/items/ItemNew'
 import ItemEdit from './components/items/ItemEdit'
 import Profile from './components/Profile'
+import IndividualProfile from './components/IndividualProfile'
 import NavBar from './components/NavBar'
 import { getToken } from './components/helpers/auth'
 import MessageForm from './components/messages/MessageForm'
@@ -33,6 +34,7 @@ const App = () => {
           <Route path="/items/new" element={<ItemNew />} /> 
           <Route path="/items/:itemId/edit" element={<ItemEdit />} /> 
           <Route path="/profile" element={<Profile />} />
+          <Route path="/profile/:profileId" element={<IndividualProfile/>} />
           <Route path="/sendmessage" element={<MessageForm />} /> 
           <Route path="/dealofday" element={<DealOfDay />} /> 
         </Routes>

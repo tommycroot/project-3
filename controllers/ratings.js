@@ -10,7 +10,8 @@ export const addRating = async (req, res) => {
     if (!seller) {
       throw new NotFound('Seller not found')
     }
-
+    
+    console.log('REQUSER', req.loggedInUser)
     const ratingToAdd = { ...req.body, owner: req.loggedInUser._id }
 
     seller.ratings.push(ratingToAdd)
