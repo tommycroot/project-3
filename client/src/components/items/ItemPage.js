@@ -61,7 +61,7 @@ const ItemPage = () => {
               <h3><span>Location:</span></h3> <p>{owner.location} , {owner.borough}</p>
               <h3><span>Condition:</span></h3> <p>{condition}</p>
               <h3><span>Approximate Value:</span></h3> <p>£{swapValue}</p>
-              <h3><span>Owner:</span></h3> <p>{owner.username}</p>
+              <h3><span>Owner:</span></h3>  <p> <Link to = {`/profile/${owner._id}`} >{owner.username}</Link> </p>
             </div>
             {userIsOwner(item) && <div><Link to={`/items/${id}/edit`} className='editItem'>Edit Item</Link></div>}
             {userIsOwner(item) && <div><Link className='deleteItem' onClick={handleDelete}>Delete Item</Link></div>}
