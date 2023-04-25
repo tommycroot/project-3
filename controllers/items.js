@@ -96,17 +96,22 @@ export const swapItems = async (req, res) => {
     const { idA, idB } = req.params
 
     const loggedUser = JSON.stringify(req.loggedInUser._id)
+    console.log('LOGGED USER', loggedUser)
 
     const itemA = await Item.findById(idA)
     const itemB = await Item.findById(idB)
+    console.log('ITEM A', itemA)
 
     const itemAOwner = JSON.stringify(itemA.owner)
     const itemBOwner = JSON.stringify(itemB.owner)
+    console.log('ITEM A OWNER', itemAOwner)
 
     if (loggedUser === itemAOwner) {
 
       const updatedA = { ...itemA._doc, owner: itemB.owner }
       const updatedB = { ...itemB._doc, owner: itemA.owner }
+
+      console.log('UPDATED A', updatedA)
 
       Object.assign(itemA, updatedA)
       Object.assign(itemB, updatedB)
