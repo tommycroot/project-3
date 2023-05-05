@@ -10,7 +10,7 @@ This project was our third and first full stack project of the General Assembly 
 
 ## Deployment Link
 
-The game is deployed [here](http://haglproject.herokuapp.com/)
+The app is deployed [here](http://haglproject.herokuapp.com/)
 
 ## Getting Started/Code Installation
 
